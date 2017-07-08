@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="源文件\Util">
+      <UniqueIdentifier>{6f9c1aca-f3d2-47e4-b9f5-45a1abef1dfa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Sys">
+      <UniqueIdentifier>{3e7585d7-49f0-47e7-9b9a-3b82ce29af94}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Sys">
+      <UniqueIdentifier>{93e61dce-b5a8-45d8-aac3-57c854b4e9d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Util">
+      <UniqueIdentifier>{eceebbd4-cfbd-4e47-8292-cae459c7a2fa}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Laser_server_debug_main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Server\LayserServer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Util\SimpleThread.cpp">
+      <Filter>源文件\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Source\Sys\Tracker.cpp">
+      <Filter>源文件\Sys</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Source\Server\LayserServer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Sys\Tracker.h">
+      <Filter>头文件\Sys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Source\Util\SimpleThread.h">
+      <Filter>头文件\Util</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

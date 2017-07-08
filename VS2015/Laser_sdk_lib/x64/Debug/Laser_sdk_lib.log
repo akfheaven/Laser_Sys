@@ -1,0 +1,14 @@
+﻿生成启动时间为 2017/7/8 14:15:02。
+     1>项目“Y:\Projects\VSProjs\VS2015\Laser_sys\Laser_sdk_lib\Laser_sdk_lib.vcxproj”在节点 2 上(Build 个目标)。
+     1>Link:
+         Z:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"Y:\Projects\VSProjs\VS2015\Laser_sys\x64\Debug\Laser_sdk_lib.dll" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"Y:\Projects\VSProjs\VS2015\Laser_sys\x64\Debug\Laser_sdk_lib.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"Y:\Projects\VSProjs\VS2015\Laser_sys\x64\Debug\Laser_sdk_lib.lib" /MACHINE:X64 /DLL x64\Debug\LayserSDK.obj
+         x64\Debug\Tracker.obj
+         x64\Debug\SimpleThread.obj
+         x64\Debug\Test_main.obj
+           正在创建库 Y:\Projects\VSProjs\VS2015\Laser_sys\x64\Debug\Laser_sdk_lib.lib 和对象 Y:\Projects\VSProjs\VS2015\Laser_sys\x64\Debug\Laser_sdk_lib.exp
+         Laser_sdk_lib.vcxproj -> Y:\Projects\VSProjs\VS2015\Laser_sys\x64\Debug\Laser_sdk_lib.dll
+     1>已完成生成项目“Y:\Projects\VSProjs\VS2015\Laser_sys\Laser_sdk_lib\Laser_sdk_lib.vcxproj”(Build 个目标)的操作。
+
+已成功生成。
+
+已用时间 00:00:00.24

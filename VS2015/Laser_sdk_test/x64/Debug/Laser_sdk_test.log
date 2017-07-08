@@ -1,0 +1,16 @@
+﻿生成启动时间为 2017/7/8 14:29:38。
+     1>项目“Y:\Projects\VSProjs\VS2015\Laser_sys\Laser_sdk_test\Laser_sdk_test.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         Z:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\CL.exe /c /IY:\Projects\VSProjs\VS2015\Laser_sys\Source\ /IY:\Projects\VSProjs\VS2015\Laser_sys\Source\SDK /ZI /nologo /W3 /WX- /Od /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Debug\\" /Fd"x64\Debug\vc140.pdb" /Gd /TP /errorReport:prompt Laser_sdk_test.cpp
+         Laser_sdk_test.cpp
+     1>y:\projects\vsprojs\vs2015\laser_sys\source\sys\tracker.h(17): warning C4005: “DLL_API”: 宏重定义
+         y:\projects\vsprojs\vs2015\laser_sys\source\sdk\laysersdk.h(19): note: 参见“DLL_API”的前一个定义
+       Link:
+         Z:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"Y:\Projects\VSProjs\VS2015\Laser_sys\x64\Debug\Laser_sdk_test.exe" /INCREMENTAL /NOLOGO /LIBPATH:Y:\Projects\VSProjs\VS2015\Laser_sys\x64\Debug Laser_sdk_lib.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"Y:\Projects\VSProjs\VS2015\Laser_sys\x64\Debug\Laser_sdk_test.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"Y:\Projects\VSProjs\VS2015\Laser_sys\x64\Debug\Laser_sdk_test.lib" /MACHINE:X64 x64\Debug\Laser_sdk_test.obj
+         x64\Debug\stdafx.obj
+         Laser_sdk_test.vcxproj -> Y:\Projects\VSProjs\VS2015\Laser_sys\x64\Debug\Laser_sdk_test.exe
+     1>已完成生成项目“Y:\Projects\VSProjs\VS2015\Laser_sys\Laser_sdk_test\Laser_sdk_test.vcxproj”(Build 个目标)的操作。
+
+已成功生成。
+
+已用时间 00:00:00.91

@@ -1,0 +1,41 @@
+﻿生成启动时间为 2017/7/8 14:09:57。
+     1>项目“Y:\Projects\VSProjs\VS2015\Laser_sys\Laser_sdk_lib\Laser_sdk_lib.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         Z:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\CL.exe /c /I..\Source\Sys /I..\Source\Util /I..\Source\SDK /ZI /nologo /W3 /WX- /Od /D MDebug /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\MDebug\\" /Fd"x64\MDebug\vc140.pdb" /Gd /TP /errorReport:prompt ..\Source\SDK\LayserSDK.cpp ..\Source\Sys\Tracker.cpp ..\Source\Util\SimpleThread.cpp Test_main.cpp
+         SimpleThread.cpp
+     1>y:\projects\vsprojs\vs2015\laser_sys\source\util\simplethread.cpp(19): warning C4273: “SimpleThread::Start”: dll 链接不一致
+         y:\projects\vsprojs\vs2015\laser_sys\source\util\simplethread.h(24): note: 参见“Start”的前一个定义
+     1>y:\projects\vsprojs\vs2015\laser_sys\source\util\simplethread.cpp(25): warning C4273: “SimpleThread::Stop”: dll 链接不一致
+         y:\projects\vsprojs\vs2015\laser_sys\source\util\simplethread.h(25): note: 参见“Stop”的前一个定义
+     1>y:\projects\vsprojs\vs2015\laser_sys\source\util\simplethread.cpp(29): warning C4273: “SimpleThread::SetRun”: dll 链接不一致
+         y:\projects\vsprojs\vs2015\laser_sys\source\util\simplethread.h(26): note: 参见“SetRun”的前一个定义
+     1>y:\projects\vsprojs\vs2015\laser_sys\source\util\simplethread.cpp(34): warning C4273: “SimpleThread::ThreadEntryWarp”: dll 链接不一致
+         y:\projects\vsprojs\vs2015\laser_sys\source\util\simplethread.h(30): note: 参见“ThreadEntryWarp”的前一个定义
+     1>y:\projects\vsprojs\vs2015\laser_sys\source\util\simplethread.cpp(41): warning C4273: “SimpleThread::ThreadRunner”: dll 链接不一致
+         y:\projects\vsprojs\vs2015\laser_sys\source\util\simplethread.h(31): note: 参见“ThreadRunner”的前一个定义
+         Tracker.cpp
+     1>y:\projects\vsprojs\vs2015\laser_sys\source\sys\tracker.cpp(15): warning C4273: “Tracker::Tracker”: dll 链接不一致
+         y:\projects\vsprojs\vs2015\laser_sys\source\sys\tracker.h(38): note: 参见“{ctor}”的前一个定义
+     1>y:\projects\vsprojs\vs2015\laser_sys\source\sys\tracker.cpp(28): warning C4273: “Tracker::Test”: dll 链接不一致
+         y:\projects\vsprojs\vs2015\laser_sys\source\sys\tracker.h(40): note: 参见“Test”的前一个定义
+         正在生成代码...
+         正在编译...
+         Test_main.cpp
+     1>y:\projects\vsprojs\vs2015\laser_sys\source\sys\tracker.h(17): warning C4005: “DLL_API”: 宏重定义
+         y:\projects\vsprojs\vs2015\laser_sys\source\sdk\laysersdk.h(19): note: 参见“DLL_API”的前一个定义
+         LayserSDK.cpp
+     1>y:\projects\vsprojs\vs2015\laser_sys\source\sys\tracker.h(17): warning C4005: “DLL_API”: 宏重定义
+         y:\projects\vsprojs\vs2015\laser_sys\source\sdk\laysersdk.h(19): note: 参见“DLL_API”的前一个定义
+         正在生成代码...
+       Link:
+         Z:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"Y:\Projects\VSProjs\VS2015\Laser_sys\x64\MDebug\Laser_sdk_lib.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"Y:\Projects\VSProjs\VS2015\Laser_sys\x64\MDebug\Laser_sdk_lib.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"Y:\Projects\VSProjs\VS2015\Laser_sys\x64\MDebug\Laser_sdk_lib.lib" /MACHINE:X64 x64\MDebug\LayserSDK.obj
+         x64\MDebug\Tracker.obj
+         x64\MDebug\SimpleThread.obj
+         x64\MDebug\Test_main.obj
+           正在创建库 Y:\Projects\VSProjs\VS2015\Laser_sys\x64\MDebug\Laser_sdk_lib.lib 和对象 Y:\Projects\VSProjs\VS2015\Laser_sys\x64\MDebug\Laser_sdk_lib.exp
+         Laser_sdk_lib.vcxproj -> Y:\Projects\VSProjs\VS2015\Laser_sys\x64\MDebug\Laser_sdk_lib.exe
+     1>已完成生成项目“Y:\Projects\VSProjs\VS2015\Laser_sys\Laser_sdk_lib\Laser_sdk_lib.vcxproj”(Build 个目标)的操作。
+
+已成功生成。
+
+已用时间 00:00:01.62

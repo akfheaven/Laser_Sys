@@ -1,0 +1,62 @@
+﻿生成启动时间为 2017/7/8 14:34:23。
+     1>项目“Y:\Projects\VSProjs\VS2015\Laser_sys\Laser_client_service\Laser_client_service.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         Z:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\CL.exe /c /I..\Source\Sys /I..\Source\Util /I..\Source\Client /I..\Source\ThirdParty\mavlink /ZI /nologo /W3 /WX- /Od /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Debug\\" /Fd"x64\Debug\vc140.pdb" /Gd /TP /errorReport:prompt ..\Source\Client\LayserService.cpp ..\Source\Sys\Tracker.cpp ..\Source\Util\SimpleThread.cpp main.cpp
+         SimpleThread.cpp
+     1>y:\projects\vsprojs\vs2015\laser_sys\source\util\simplethread.cpp(19): warning C4273: “SimpleThread::Start”: dll 链接不一致
+         y:\projects\vsprojs\vs2015\laser_sys\source\util\simplethread.h(24): note: 参见“Start”的前一个定义
+     1>y:\projects\vsprojs\vs2015\laser_sys\source\util\simplethread.cpp(25): warning C4273: “SimpleThread::Stop”: dll 链接不一致
+         y:\projects\vsprojs\vs2015\laser_sys\source\util\simplethread.h(25): note: 参见“Stop”的前一个定义
+     1>y:\projects\vsprojs\vs2015\laser_sys\source\util\simplethread.cpp(29): warning C4273: “SimpleThread::SetRun”: dll 链接不一致
+         y:\projects\vsprojs\vs2015\laser_sys\source\util\simplethread.h(26): note: 参见“SetRun”的前一个定义
+     1>y:\projects\vsprojs\vs2015\laser_sys\source\util\simplethread.cpp(34): warning C4273: “SimpleThread::ThreadEntryWarp”: dll 链接不一致
+         y:\projects\vsprojs\vs2015\laser_sys\source\util\simplethread.h(30): note: 参见“ThreadEntryWarp”的前一个定义
+     1>y:\projects\vsprojs\vs2015\laser_sys\source\util\simplethread.cpp(41): warning C4273: “SimpleThread::ThreadRunner”: dll 链接不一致
+         y:\projects\vsprojs\vs2015\laser_sys\source\util\simplethread.h(31): note: 参见“ThreadRunner”的前一个定义
+         Tracker.cpp
+     1>y:\projects\vsprojs\vs2015\laser_sys\source\sys\tracker.cpp(15): warning C4273: “Tracker::Tracker”: dll 链接不一致
+         y:\projects\vsprojs\vs2015\laser_sys\source\sys\tracker.h(38): note: 参见“{ctor}”的前一个定义
+     1>y:\projects\vsprojs\vs2015\laser_sys\source\sys\tracker.cpp(28): warning C4273: “Tracker::Test”: dll 链接不一致
+         y:\projects\vsprojs\vs2015\laser_sys\source\sys\tracker.h(40): note: 参见“Test”的前一个定义
+         正在生成代码...
+         正在编译...
+         main.cpp
+     1>y:\projects\vsprojs\vs2015\laser_sys\source\thirdparty\mavlink\mavlink_conversions.h(48): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>y:\projects\vsprojs\vs2015\laser_sys\source\thirdparty\mavlink\mavlink_conversions.h(49): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>y:\projects\vsprojs\vs2015\laser_sys\source\thirdparty\mavlink\mavlink_conversions.h(50): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>y:\projects\vsprojs\vs2015\laser_sys\source\thirdparty\mavlink\mavlink_conversions.h(51): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>y:\projects\vsprojs\vs2015\laser_sys\source\thirdparty\mavlink\mavlink_conversions.h(52): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>y:\projects\vsprojs\vs2015\laser_sys\source\thirdparty\mavlink\mavlink_conversions.h(53): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>y:\projects\vsprojs\vs2015\laser_sys\source\thirdparty\mavlink\mavlink_conversions.h(54): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>y:\projects\vsprojs\vs2015\laser_sys\source\thirdparty\mavlink\mavlink_conversions.h(55): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>y:\projects\vsprojs\vs2015\laser_sys\source\thirdparty\mavlink\mavlink_conversions.h(56): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>y:\projects\vsprojs\vs2015\laser_sys\source\thirdparty\mavlink\mavlink_conversions.h(71): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>y:\projects\vsprojs\vs2015\laser_sys\source\sys\tracker.h(17): warning C4005: “DLL_API”: 宏重定义
+         y:\projects\vsprojs\vs2015\laser_sys\source\util\simplethread.h(18): note: 参见“DLL_API”的前一个定义
+         LayserService.cpp
+     1>y:\projects\vsprojs\vs2015\laser_sys\source\thirdparty\mavlink\mavlink_conversions.h(48): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>y:\projects\vsprojs\vs2015\laser_sys\source\thirdparty\mavlink\mavlink_conversions.h(49): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>y:\projects\vsprojs\vs2015\laser_sys\source\thirdparty\mavlink\mavlink_conversions.h(50): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>y:\projects\vsprojs\vs2015\laser_sys\source\thirdparty\mavlink\mavlink_conversions.h(51): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>y:\projects\vsprojs\vs2015\laser_sys\source\thirdparty\mavlink\mavlink_conversions.h(52): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>y:\projects\vsprojs\vs2015\laser_sys\source\thirdparty\mavlink\mavlink_conversions.h(53): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>y:\projects\vsprojs\vs2015\laser_sys\source\thirdparty\mavlink\mavlink_conversions.h(54): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>y:\projects\vsprojs\vs2015\laser_sys\source\thirdparty\mavlink\mavlink_conversions.h(55): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>y:\projects\vsprojs\vs2015\laser_sys\source\thirdparty\mavlink\mavlink_conversions.h(56): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>y:\projects\vsprojs\vs2015\laser_sys\source\thirdparty\mavlink\mavlink_conversions.h(71): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>y:\projects\vsprojs\vs2015\laser_sys\source\sys\tracker.h(17): warning C4005: “DLL_API”: 宏重定义
+         y:\projects\vsprojs\vs2015\laser_sys\source\util\simplethread.h(18): note: 参见“DLL_API”的前一个定义
+     1>y:\projects\vsprojs\vs2015\laser_sys\source\client\layserservice.cpp(122): warning C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+         c:\program files (x86)\windows kits\10\include\10.0.15063.0\um\winsock2.h(1830): note: 参见“inet_addr”的声明
+         正在生成代码...
+       Link:
+         Z:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"Y:\Projects\VSProjs\VS2015\Laser_sys\x64\Debug\Laser_client_service.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"Y:\Projects\VSProjs\VS2015\Laser_sys\x64\Debug\Laser_client_service.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"Y:\Projects\VSProjs\VS2015\Laser_sys\x64\Debug\Laser_client_service.lib" /MACHINE:X64 x64\Debug\LayserService.obj
+         x64\Debug\Tracker.obj
+         x64\Debug\SimpleThread.obj
+         x64\Debug\main.obj
+     1>LINK : fatal error LNK1168: 无法打开 Y:\Projects\VSProjs\VS2015\Laser_sys\x64\Debug\Laser_client_service.exe 进行写入
+     1>已完成生成项目“Y:\Projects\VSProjs\VS2015\Laser_sys\Laser_client_service\Laser_client_service.vcxproj”(Build 个目标)的操作 - 失败。
+
+生成失败。
+
+已用时间 00:00:01.44
