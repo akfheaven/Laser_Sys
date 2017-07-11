@@ -149,11 +149,15 @@ BOOL CLaser_server_mfcApp::InitInstance()
 	if (!ProcessShellCommand(cmdInfo))
 		return FALSE;
 
-	m_pMainWnd->SetWindowTextW(_T("2333"));
+	m_pMainWnd->SetWindowTextW(_T(""));
+
 
 	// 唯一的一个窗口已初始化，因此显示它并对其进行更新
 	m_pMainWnd->ShowWindow(SW_SHOW);
 	m_pMainWnd->UpdateWindow();
+
+
+	
 	return TRUE;
 }
 

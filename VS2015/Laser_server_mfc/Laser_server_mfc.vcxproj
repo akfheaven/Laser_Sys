@@ -115,10 +115,13 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>..\Source\Sys;..\Source\Server;..\Source\Util;..\Source\ThirdParty\mavlink;..\Source\ThirdParty\Communication;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\x64\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Laser_server_lib.lib</AdditionalDependencies>
     </Link>
     <Midl>
       <MkTypLibCompatible>false</MkTypLibCompatible>
@@ -193,6 +196,7 @@
     <ClInclude Include="Laser_server_mfcDoc.h" />
     <ClInclude Include="Laser_server_mfcView.h" />
     <ClInclude Include="MainFrm.h" />
+    <ClInclude Include="MListCtrl.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
@@ -203,6 +207,7 @@
     <ClCompile Include="Laser_server_mfcDoc.cpp" />
     <ClCompile Include="Laser_server_mfcView.cpp" />
     <ClCompile Include="MainFrm.cpp" />
+    <ClCompile Include="MListCtrl.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -215,6 +220,7 @@
     <ResourceCompile Include="Laser_server_mfc.rc" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="ClassDiagram.cd" />
     <None Include="res\Laser_server_mfc.rc2" />
   </ItemGroup>
   <ItemGroup>
@@ -222,6 +228,11 @@
     <Image Include="res\Laser_server_mfcDoc.ico" />
     <Image Include="res\TestFormView.ico" />
     <Image Include="res\Toolbar.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Laser_server_lib\Laser_server_lib.vcxproj">
+      <Project>{aedb4d39-7001-4f17-af24-b87fd5fc55a6}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

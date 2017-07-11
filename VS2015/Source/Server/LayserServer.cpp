@@ -40,8 +40,11 @@ void LayserServer::Start(int pPort) {
 	port = pPort;
 
 	//trackers
+	InitializeCriticalSection(&TrackersCpyLock);
 	Trackers = new vector<Tracker*>();
 	Trackers->clear();
+	TrackersCpy = new vector<Tracker*>();
+	TrackersCpy->clear();
 	InitID();
 
 	//map lock
@@ -71,12 +74,14 @@ void LayserServer::Stop() {
 	SendThread->Stop();
 }
 
-void LayserServer::UpdateChipName(char* NewName) {
-
-}
-
 vector<Tracker*>* LayserServer::GetTrackers() {
-	return Trackers;
+	EnterCriticalSection(&TrackersCpyLock);
+	TrackersCpy->clear();
+	for (int i = 0; i < Trackers->size(); i++) {
+		TrackersCpy->push_back((*Trackers)[i]);
+	}
+	LeaveCriticalSection(&TrackersCpyLock);
+	return TrackersCpy;
 }
 
 
@@ -160,7 +165,7 @@ void LayserServer::ReadDataRun()
 				id = GenID();
 				if (id > 0 && id <= MAX_TRACKER_NUM) {//GenOK
 					IpMapGenID[fromIp] = id;
-					GenIDMapReadID[id] = id - 1;//Test ,real for custom
+					GenIDMapRealID[id] = -1;
 				}
 			}
 			LeaveCriticalSection(&g_cs);
@@ -286,7 +291,9 @@ void LayserServer::DecodeMavlink(uint8_t channel, char * data, int len)
 //Encode with Mavlink And BroadCast
 void LayserServer::MulticastTrackerData(SOCKET &s, sockaddr_in &remote)
 {
-	EnterCriticalSection(&g_cs);// stupid?
+	EnterCriticalSection(&g_cs);// lock map
+
+	EnterCriticalSection(&TrackersCpyLock);//lock vector
 
 	map<char*, int>::iterator it = IpMapGenID.begin();
 	Trackers->clear();
@@ -303,20 +310,23 @@ void LayserServer::MulticastTrackerData(SOCKET &s, sockaddr_in &remote)
 			IpMapGenID.erase(it++);
 			
 			DelID(genId);
-			GenIDMapReadID[genId] = -1;
+			int realId = GenIDMapRealID[genId];
+			GenIDMapRealID[genId] = -1;
+			RealIDMapGenID[realId] = -1;
 		}
 		else {// not time out
 			//update Trackers
 			Tracker* curTracker = &ReadTracker[genId];
-			int realId = GenIDMapReadID[genId];
+			int realId = GenIDMapRealID[genId];
 			curTracker->ReadId = realId;
+			curTracker->GenId = genId;
 			Trackers->push_back(curTracker);
 			
 			n++;
 			it++;
 		}
 	}
-
+	LeaveCriticalSection(&TrackersCpyLock);
 	LeaveCriticalSection(&g_cs);
 
 
@@ -324,6 +334,8 @@ void LayserServer::MulticastTrackerData(SOCKET &s, sockaddr_in &remote)
 		//mavlink multicast  thread lock require?
 		Tracker* curTracker = (*Trackers)[i];
 		int realId = curTracker->ReadId;
+		if (realId == -1)continue;
+
 		ToSendTracker.ID = realId;
 		ToSendTracker.Qw = curTracker->Qw;
 		ToSendTracker.Qx = curTracker->Qx;
@@ -350,7 +362,8 @@ void LayserServer::InitID()
 	NextGenID[0] = 1;//as tail manager
 
 	for (int i = 0; i <= MAX_TRACKER_NUM; i++) {
-		GenIDMapReadID[i] = -1;
+		GenIDMapRealID[i] = -1;
+		RealIDMapGenID[i] = -1;
 		IsGenIDExist[i] = false;
 	}
 }
@@ -376,6 +389,23 @@ int LayserServer::DelID(int id)
 		return 0;
 	}
 	return -1;
+}
+
+bool LayserServer::setGenIdMapRealID(int GenID, int RealID)
+{
+	if (GenID < 1 || GenID > MAX_TRACKER_NUM || RealID < 0 || RealID >= MAX_TRACKER_NUM)return false;
+
+	int preGenID = RealIDMapGenID[RealID];
+	if (preGenID == -1) {//!exist
+		RealIDMapGenID[RealID] = GenID;
+	}
+	else {//exist: preGenID map RealID
+		GenIDMapRealID[preGenID] = -1;
+		RealIDMapGenID[RealID] = GenID;
+	}
+
+	GenIDMapRealID[GenID] = RealID;
+	return true;
 }
 
 

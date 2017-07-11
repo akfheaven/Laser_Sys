@@ -155,6 +155,11 @@
     <ClCompile Include="Laser_sdk_test.cpp" />
     <ClCompile Include="stdafx.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Laser_sdk_lib\Laser_sdk_lib.vcxproj">
+      <Project>{5f84507d-ec22-4fc5-9240-5e90b21ae6c7}</Project>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

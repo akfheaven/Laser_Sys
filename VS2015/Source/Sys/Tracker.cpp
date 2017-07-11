@@ -22,6 +22,7 @@ Tracker::Tracker() {
 	Pz = 0;
 	timeStemp = 0;
 	ReadId = -1;
+	GenId = 0;
 }
 
 void Tracker::Test()

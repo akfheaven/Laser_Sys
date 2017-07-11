@@ -40,7 +40,7 @@ public:
 	virtual ~LayserServer();
 	void Start(int port);
 	void Stop();
-	void UpdateChipName(char* NewName);
+	bool setGenIdMapRealID(int GenID, int RealID);
 	vector<Tracker*>* GetTrackers();
 private:
 	// Server Threads
@@ -76,6 +76,8 @@ private:
 
 	//Tacker 
 	vector<Tracker*> *Trackers;
+	vector<Tracker*> *TrackersCpy;
+	CRITICAL_SECTION TrackersCpyLock;
 	Tracker ReadTracker[MAX_TRACKER_NUM + 5];
 	map<char*, Tracker*> TrackerMap;
 	uint8_t MavSendBuffer[MAX_TRACKER_NUM + 5][1024];
@@ -85,14 +87,17 @@ private:
 
 	//Tracer ID Managememt 
 	bool IsGenIDExist[MAX_TRACKER_NUM + 5];
+	bool IsRealIDExist[MAX_TRACKER_NUM + 5];
 	int NextGenID[MAX_TRACKER_NUM + 5];
 	void InitID();
 	int GenID();
 	int DelID(int id);
 	map<char*, int>IpMapGenID;
 	double GenIDMapTimeTick[MAX_TRACKER_NUM + 5];
-	int GenIDMapReadID[MAX_TRACKER_NUM + 5];
+	int GenIDMapRealID[MAX_TRACKER_NUM + 5];
+	int RealIDMapGenID[MAX_TRACKER_NUM + 5];
 	static const double IP_TIME_OUT;//second
+	
 
 };
 

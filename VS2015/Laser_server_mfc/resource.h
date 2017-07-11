@@ -9,17 +9,20 @@
 #define IDR_Laser_server_mfTYPE         130
 #define IDU_TEST_BTN                    310
 #define IDR_TESTFORMVIEW_TMPL           311
+#define IDC_EDIT                        312
 #define IDC_BUTTON                      1000
 #define IDC_BUTTON2                     1001
-#define hh                              32776
+#define IDC_LIST1                       1003
+#define IDC_LIST4                       1018
+#define ID_222                          32777
 
 // Next default values for new objects
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        312
-#define _APS_NEXT_COMMAND_VALUE         32777
-#define _APS_NEXT_CONTROL_VALUE         1003
-#define _APS_NEXT_SYMED_VALUE           312
+#define _APS_NEXT_RESOURCE_VALUE        314
+#define _APS_NEXT_COMMAND_VALUE         32778
+#define _APS_NEXT_CONTROL_VALUE         1021
+#define _APS_NEXT_SYMED_VALUE           313
 #endif
 #endif

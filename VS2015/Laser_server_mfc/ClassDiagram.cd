@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="CMainFrame" Collapsed="true">
+    <Position X="6.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAAAACAAAiAAAgCAAAgAAAAAAAAAAABA=</HashCode>
+      <FileName>MainFrm.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TestFormView" Collapsed="true">
+    <Position X="5.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAgAAAAAAIGBAAkAAAACAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>TestFormView.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CMListCtrl" Collapsed="true">
+    <Position X="8.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAgAAAAEIAAAAAAAAgAAAAAAAgA=</HashCode>
+      <FileName>MListCtrl.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CLaser_server_mfcView" Collapsed="true">
+    <Position X="11.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAIAAAAAAAAAAACABAgAAAgCAAAAAAEAgAAAAAAAA=</HashCode>
+      <FileName>Laser_server_mfcView.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CLaser_server_mfcDoc" Collapsed="true">
+    <Position X="10.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAACAAAgAAgASgggAEAAAAAAAAAAAA=</HashCode>
+      <FileName>Laser_server_mfcDoc.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CLaser_server_mfcApp" Collapsed="true">
+    <Position X="8.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAAAAAAAAAABAIAAAAQAAAABAAAAAAA=</HashCode>
+      <FileName>Laser_server_mfc.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CAboutDlg" Collapsed="true">
+    <Position X="9" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAABAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Laser_server_mfc.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Microsoft YaHei UI" Size="9" />
+</ClassDiagram>
