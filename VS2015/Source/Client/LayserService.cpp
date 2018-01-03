@@ -5,7 +5,7 @@
 //  @ Project : Laser_sys
 //  @ File Name : LayserService.cpp
 //  @ Date : 2017/7/4
-//  @ Author : 
+//  @ Author : akfheaven
 //
 //
 
@@ -114,8 +114,8 @@ void LayserService::ReadDataRun()
 		return;
 	}
 	
-	//int optval = 8;
-	//setsockopt(s, IPPROTO_IP, IP_MULTICAST_TTL, (char*)&optval, sizeof(int));
+	/*int optval = 8;
+	setsockopt(s, IPPROTO_IP, IP_MULTICAST_TTL, (char*)&optval, sizeof(int));*/
 
 	///**¼ÓÈë×é²¥**/
 	struct ip_mreq myMreq;
@@ -158,7 +158,7 @@ void LayserService::ReadDataRun()
 							Trackers[readedTracker.ID].Py = readedTracker.Py;
 							Trackers[readedTracker.ID].Pz = readedTracker.Pz;
 						}
-						printf("tracker id: %d | %f	%f	%f	%f\n", readedTracker.ID, readedTracker.Qw, readedTracker.Qx, readedTracker.Qy, readedTracker.Qz);
+						//printf("tracker id: %d | %f	%f	%f	%f\n", readedTracker.ID, readedTracker.Qw, readedTracker.Qx, readedTracker.Qy, readedTracker.Qz);
 					}
 					//printf("id: %d\n", msg.msgid);
 				}

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="LayserServer" Collapsed="true">
+    <Position X="3" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>ACQBAAAAAGIhCAAQgEtBgEAFgEgIAEgAJMgkEIEgEAg=</HashCode>
+      <FileName>Y:\Projects\VSProjs\VS2015\Laser_sys\VS2015\Source\Server\LayserServer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Tracker" Collapsed="true">
+    <Position X="3" Y="1.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAgAAGAAAIABAAAAAAAAAAQQAAAAAAAAAUAACAKAAQA=</HashCode>
+      <FileName>Y:\Projects\VSProjs\VS2015\Laser_sys\VS2015\Source\Sys\Tracker.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SimpleThread" Collapsed="true">
+    <Position X="6" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>ABAACAAAACAAIAAQAAAAAAgAAAAEgAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Y:\Projects\VSProjs\VS2015\Laser_sys\VS2015\Source\Util\SimpleThread.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="__unnamed_struct_0003_1" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>BAAAAIAAAAAAAAAAgAAAAEAAAAIAAAAAAAUAAAAAgAA=</HashCode>
+      <FileName>Y:\Projects\VSProjs\VS2015\Laser_sys\VS2015\Source\Server\LayserServer.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Typedef Name="mMavlink_attitude_quaternion_t" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Y:\Projects\VSProjs\VS2015\Laser_sys\VS2015\Source\Server\LayserServer.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Font Name="Microsoft YaHei UI" Size="9" />
+</ClassDiagram>

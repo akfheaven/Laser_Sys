@@ -14,8 +14,6 @@ int main()
 	a->Test();
 	while (1) {
 		Tracker* var = sdk.GetChipData(0);
-		SimpleThread aa;
-		aa.Start("1");
 		printf("%f	%f	%f	%f\n", var->Qw, var->Qx, var->Qy, var->Qz);
 	}
     return 0;

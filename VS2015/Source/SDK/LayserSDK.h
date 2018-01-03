@@ -5,7 +5,7 @@
 //  @ Project : Laser_sys
 //  @ File Name : LayserSDK.h
 //  @ Date : 2017/7/4
-//  @ Author : 
+//  @ Author : akfheaven
 //
 //
 
@@ -13,10 +13,23 @@
 #if !defined(_LAYSERSDK_H)
 #define _LAYSERSDK_H
 
+#ifndef CLASS_API
+#define CLASS_API
+
+#ifndef AS_LIB
+#ifndef AS_CODE
 #ifdef  DLL_API
 #define DLL_API __declspec(dllexport)
 #else
 #define DLL_API __declspec(dllimport)
+#endif
+#else 
+#define DLL_API
+#endif
+#else
+#define DLL_API
+#endif
+
 #endif
 
 #include <stdint.h>

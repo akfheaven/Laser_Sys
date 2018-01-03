@@ -110,7 +110,7 @@ void TestFormView::OnInitialUpdate()
 	mCustomListCtrl.InsertColumn(3, _T("Qy"), LVCFMT_LEFT, QWidth);
 	mCustomListCtrl.InsertColumn(4, _T("Qz"), LVCFMT_LEFT, QWidth);
 
-	this->SetTimer(1, 20, NULL);//50hz
+	this->SetTimer(1, 200, NULL);//50hz
 }
 
 
@@ -152,7 +152,7 @@ void TestFormView::OnTimer(UINT_PTR nIDEvent)
 		if (var == NULL)continue;
 
 		if (i >= preListSize) {
-			mCustomListCtrl.InsertItem(i, CString(_T("123")));
+			mCustomListCtrl.InsertItem(i, CString());
 		}
 		listMapGenID[i] = var->GenId;
 

@@ -5,7 +5,7 @@
 //  @ Project : Laser_sys
 //  @ File Name : LayserSDK.cpp
 //  @ Date : 2017/7/4
-//  @ Author : 
+//  @ Author : akfheaven
 //
 //
 

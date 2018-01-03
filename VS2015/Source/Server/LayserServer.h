@@ -29,7 +29,6 @@ typedef struct {
 	float rollspeed; /*< Roll angular speed (rad/s)*/
 	float pitchspeed; /*< Pitch angular speed (rad/s)*/
 	float yawspeed; /*< Yaw angular speed (rad/s)*/
-	char name[5];
 } mMavlink_attitude_quaternion_t;
 
 

@@ -201,14 +201,24 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Source\Server\LayserServer.cpp" />
+    <ClCompile Include="..\Source\Server\SerialRead.cpp" />
+    <ClCompile Include="..\Source\Server\SocketRead.cpp" />
+    <ClCompile Include="..\Source\Server\TestRead.cpp" />
     <ClCompile Include="..\Source\Sys\Tracker.cpp" />
     <ClCompile Include="..\Source\Util\SimpleThread.cpp" />
     <ClCompile Include="Laser_server_debug_main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Source\Server\LayserServer.h" />
+    <ClInclude Include="..\Source\Server\ReadSensorInterface.h" />
+    <ClInclude Include="..\Source\Server\SerialRead.h" />
+    <ClInclude Include="..\Source\Server\SocketRead.h" />
+    <ClInclude Include="..\Source\Server\TestRead.h" />
     <ClInclude Include="..\Source\Sys\Tracker.h" />
     <ClInclude Include="..\Source\Util\SimpleThread.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

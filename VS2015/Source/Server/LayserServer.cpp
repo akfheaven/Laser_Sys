@@ -5,7 +5,7 @@
 //  @ Project : Laser_sys
 //  @ File Name : LayserServer.cpp
 //  @ Date : 2017/7/4
-//  @ Author : 
+//  @ Author : akfheaven
 //
 //
 
@@ -140,6 +140,14 @@ void LayserServer::ReadDataRun()
 	puts("UDP Bind done");
 
 	char* fromIp;
+
+	double tttime = 0;
+	memset(&si_other, 0, sizeof(si_other));
+	si_other.sin_family = AF_INET;
+	si_other.sin_addr.S_un.S_addr = inet_addr("192.168.1.105");
+	si_other.sin_port = htons(32154);
+	sendto(s, "hhhhh", 5, 0, (sockaddr*)&si_other, slen);
+	int cc = 0;
 	//keep listening for data
 	while (ReadContinueFlag)
 	{
@@ -152,6 +160,17 @@ void LayserServer::ReadDataRun()
 			//break;
 		}
 		else {
+			
+			printf("%lf\n", GetTickCount() - tttime);
+			
+
+			cc++;
+			if (cc % 4 == 0)
+				Sleep(1000);
+			//echo 
+			sendto(s, "hhhhh", 5, 0, (sockaddr*)&si_other, slen);
+			tttime = GetTickCount();
+			continue;
 
 			//ID Management
 			//strcpy(fromIp, inet_ntoa(si_other.sin_addr));
@@ -165,7 +184,7 @@ void LayserServer::ReadDataRun()
 				id = GenID();
 				if (id > 0 && id <= MAX_TRACKER_NUM) {//GenOK
 					IpMapGenID[fromIp] = id;
-					GenIDMapRealID[id] = -1;
+					GenIDMapRealID[id] = 1;
 				}
 			}
 			LeaveCriticalSection(&g_cs);
@@ -251,7 +270,7 @@ void LayserServer::SendDataRun()
 	remote.sin_family = AF_INET;
 	remote.sin_addr.S_un.S_addr = inet_addr("234.5.6.7");
 	//remote.sin_addr.S_un.S_addr = inet_addr("127.0.0.1");
-	//remote.sin_addr.S_un.S_addr = inet_addr("192.168.1.107");
+	//remote.sin_addr.S_un.S_addr = inet_addr("192.168.1.111");
 	remote.sin_port = htons(portSend);
 
 
@@ -274,9 +293,9 @@ void LayserServer::DecodeMavlink(uint8_t channel, char * data, int len)
 		if (mavlink_parse_char(channel, data[i], &DecodeMsg[channel], &status)) {
 			if (DecodeMsg[channel].msgid == MAVLINK_MSG_ID_ATTITUDE_QUATERNION)
 			{
-				memcpy(&pck, DecodeMsg[channel].payload64, MAVLINK_MSG_ID_ATTITUDE_QUATERNION_LEN + 5);
+				memcpy(&pck, DecodeMsg[channel].payload64, MAVLINK_MSG_ID_ATTITUDE_QUATERNION_LEN);
 #ifdef MDebug
-				printf("%d | %f | %f | %f | %s\n", pck.time_boot_ms, pck.pitchspeed, pck.rollspeed, pck.yawspeed, pck.name);
+				//printf("%d | %f | %f | %f\n", pck.time_boot_ms, pck.pitchspeed, pck.rollspeed, pck.yawspeed);
 #endif
 				ReadTracker[channel].timeStemp = pck.time_boot_ms;
 				ReadTracker[channel].Qw = pck.q1;
