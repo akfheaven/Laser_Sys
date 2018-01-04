@@ -18,7 +18,8 @@
 class SerialRead : public ReadSensorInterface {
 public:
 	void Init(char* port, int bautRate);
-	bool RecieveData(char* data, int& len, int& channel);
+	bool RecieveData(char* data, int& len, char* channel);
+	void close();
 };
 
 #endif  //_SERIALREAD_H

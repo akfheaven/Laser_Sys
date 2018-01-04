@@ -13,6 +13,7 @@
 #include <winsock2.h>
 #include <Ws2tcpip.h>
 #include <mswsock.h>
+
 #include "LayserServer.h"
 #pragma comment(lib, "Ws2_32.lib")
 
@@ -102,88 +103,53 @@ void LayserServer::SendDataRunWarp(void * Owner)
 //Read UDP Data
 void LayserServer::ReadDataRun()
 {
-	SOCKET s;
-	struct sockaddr_in server, si_other;
-	int slen, recv_len;
+	int recv_len;
 	char buf[MAX_BUFFER];
-	WSADATA wsa;
+	char* recv_addr = nullptr;
 
-	slen = sizeof(si_other);
+	//double tttime = 0;
+	//memset(&si_other, 0, sizeof(si_other));
+	//si_other.sin_family = AF_INET;
+	//si_other.sin_addr.S_un.S_addr = inet_addr("192.168.1.105");
+	//si_other.sin_port = htons(32154);
+	////sendto(s, "hhhhh", 5, 0, (sockaddr*)&si_other, slen);
+	//int cc = 0;
 
-	//Initialise winsock
-	printf("\nInitialising Winsock...");
-	if (WSAStartup(MAKEWORD(2, 2), &wsa) != 0)
-	{
-		printf("Failed. Error Code : %d", WSAGetLastError());
-		return ;
-	}
-	printf("UDP Initialised.\n");
 
-	//Create a socket
-	if ((s = socket(AF_INET, SOCK_DGRAM, 0)) == INVALID_SOCKET)
-	{
-		printf("Could not create socket : %d", WSAGetLastError());
-	}
-	printf("Socket created.\n");
+	SocketRead* socketRead = new SocketRead();
+	socketRead->Init(port);
 
-	//Prepare the sockaddr_in structure
-	server.sin_family = AF_INET;
-	server.sin_addr.s_addr = INADDR_ANY;
-	server.sin_port = htons(port);
+	readInterface = socketRead;
 
-	//Bind
-	if (bind(s, (struct sockaddr *)&server, sizeof(server)) == SOCKET_ERROR)
-	{
-		printf("Bind failed with error code : %d", WSAGetLastError());
-		return;
-	}
-	puts("UDP Bind done");
-
-	char* fromIp;
-
-	double tttime = 0;
-	memset(&si_other, 0, sizeof(si_other));
-	si_other.sin_family = AF_INET;
-	si_other.sin_addr.S_un.S_addr = inet_addr("192.168.1.105");
-	si_other.sin_port = htons(32154);
-	sendto(s, "hhhhh", 5, 0, (sockaddr*)&si_other, slen);
-	int cc = 0;
 	//keep listening for data
 	while (ReadContinueFlag)
 	{
 
 
 		//try to receive some data, this is a blocking call
-		if ((recv_len = recvfrom(s, buf, READ_LEN, 0, (struct sockaddr *) &si_other, &slen)) == SOCKET_ERROR)
-		{
-			printf("recvfrom() failed with error code : %d", WSAGetLastError());
-			//break;
-		}
-		else {
+		if (readInterface->RecieveData(buf, recv_len, recv_addr)){
 			
-			printf("%lf\n", GetTickCount() - tttime);
-			
-
-			cc++;
-			if (cc % 4 == 0)
-				Sleep(1000);
-			//echo 
-			sendto(s, "hhhhh", 5, 0, (sockaddr*)&si_other, slen);
-			tttime = GetTickCount();
-			continue;
+			//printf("%lf\n", GetTickCount() - tttime);
+			//cc++;
+			//if (cc % 4 == 0)
+			//	Sleep(1000);
+			////echo 
+			//sendto(s, "hhhhh", 5, 0, (sockaddr*)&si_other, slen);
+			//tttime = GetTickCount();
+			//continue;
 
 			//ID Management
 			//strcpy(fromIp, inet_ntoa(si_other.sin_addr));
-			fromIp = inet_ntoa(si_other.sin_addr);
+			//fromIp = inet_ntoa(si_other.sin_addr);
 
 			EnterCriticalSection(&g_cs);// lock map
-			int id = IpMapGenID[fromIp];
+			int id = addrMapGenID[recv_addr];
 			//printf("%d\n", id);
 			bool idExist = (id >= 1 && id <= MAX_TRACKER_NUM);
 			if (! idExist) {//!exist thend add map
 				id = GenID();
 				if (id > 0 && id <= MAX_TRACKER_NUM) {//GenOK
-					IpMapGenID[fromIp] = id;
+					addrMapGenID[recv_addr] = id;
 					GenIDMapRealID[id] = 1;
 				}
 			}
@@ -208,8 +174,10 @@ void LayserServer::ReadDataRun()
 			LeaveCriticalSection(&g_cs);*/
 		}
 	}
-	closesocket(s);
-	WSACleanup();
+	/*closesocket(s);
+	WSACleanup();*/
+	readInterface->close();
+	delete readInterface;
 }
 
 //Send
@@ -314,11 +282,11 @@ void LayserServer::MulticastTrackerData(SOCKET &s, sockaddr_in &remote)
 
 	EnterCriticalSection(&TrackersCpyLock);//lock vector
 
-	map<char*, int>::iterator it = IpMapGenID.begin();
+	map<char*, int>::iterator it = addrMapGenID.begin();
 	Trackers->clear();
 
 	int n = 0;
-	while (it != IpMapGenID.end()) {
+	while (it != addrMapGenID.end()) {
 		
 		int genId = it->second;
 		//check zombie ip
@@ -326,7 +294,7 @@ void LayserServer::MulticastTrackerData(SOCKET &s, sockaddr_in &remote)
 		double timeSpan = curTime - GenIDMapTimeTick[genId];
 		if (timeSpan > IP_TIME_OUT) {
 			
-			IpMapGenID.erase(it++);
+			addrMapGenID.erase(it++);
 			
 			DelID(genId);
 			int realId = GenIDMapRealID[genId];

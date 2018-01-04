@@ -16,7 +16,12 @@ void SerialRead::Init(char* port, int bautRate) {
 
 }
 
-bool SerialRead::RecieveData(char* data, int& len, int& channel) {
+bool SerialRead::RecieveData(char* data, int& len, char* channel) {
+	return false;
+}
+
+void SerialRead::close()
+{
 
 }
 

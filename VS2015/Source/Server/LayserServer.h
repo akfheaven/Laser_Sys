@@ -15,6 +15,9 @@
 
 #include <vector>
 #include <map>
+
+#include "ReadSensorInterface.h"
+#include "SocketRead.h"
 #include "Tracker.h"
 #include "SimpleThread.h"
 #include "common\mavlink.h"
@@ -56,9 +59,11 @@ private:
 	bool ReadContinueFlag;
 	bool SendContinueFlag;
 
+	//Read
+	ReadSensorInterface* readInterface;
 
 	//UDP
-	int port = 8888;//C++11?
+	int port = 8999;//C++11?
 	int portSend = 7777;
 	static const int MAX_BUFFER = 2048;
 	static const int READ_LEN = 2048;
@@ -91,7 +96,7 @@ private:
 	void InitID();
 	int GenID();
 	int DelID(int id);
-	map<char*, int>IpMapGenID;
+	map<char*, int>addrMapGenID;
 	double GenIDMapTimeTick[MAX_TRACKER_NUM + 5];
 	int GenIDMapRealID[MAX_TRACKER_NUM + 5];
 	int RealIDMapGenID[MAX_TRACKER_NUM + 5];

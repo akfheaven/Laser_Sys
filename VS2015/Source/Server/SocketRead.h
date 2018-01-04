@@ -12,13 +12,26 @@
 
 #if !defined(_SOCKETREAD_H)
 #define _SOCKETREAD_H
+#include <winsock2.h>
+#include <Ws2tcpip.h>
+#include <mswsock.h>
 
 #include "ReadSensorInterface.h"
 
 class SocketRead : public ReadSensorInterface {
 public:
+	static const int MAX_BUFFER = 2048;
+	static const int READ_LEN = 2048;
+protected:
+	//socket 
+	SOCKET s;
+	struct sockaddr_in server, si_other;
+	int slen;
+	WSADATA wsa;
+public:
 	void Init(int port);
-	bool RecieveData(char* data, int& len, int& channel);
+	bool RecieveData(char* data, int& len, char* channel);
+	void close();
 };
 
 #endif  //_SOCKETREAD_H

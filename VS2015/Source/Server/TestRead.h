@@ -18,7 +18,7 @@
 class TestRead : public ReadSensorInterface {
 public:
 	void Init();
-	bool RecieveData(char* data, int& len, int& channel);
+	bool RecieveData(char* data, int& len, char* channel);
 };
 
 #endif  //_TESTREAD_H

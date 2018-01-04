@@ -16,7 +16,8 @@ void TestRead::Init() {
 
 }
 
-bool TestRead::RecieveData(char* data, int& len, int& channel) {
-
+bool TestRead::RecieveData(char* data, int& len, char* channel) {
+	
+	return true;
 }
 

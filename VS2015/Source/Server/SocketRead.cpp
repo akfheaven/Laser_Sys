@@ -8,15 +8,54 @@
 //  @ Author : akfheaven
 //
 //
-
-
+#include <cstdio>
 #include "SocketRead.h"
 
 void SocketRead::Init(int port) {
+	slen = sizeof(si_other);
+	//Initialise winsock
+	printf("\nInitialising Winsock...");
+	if (WSAStartup(MAKEWORD(2, 2), &wsa) != 0)
+	{
+		printf("Failed. Error Code : %d", WSAGetLastError());
+		return;
+	}
+	printf("UDP Initialised.\n");
 
+	//Create a socket
+	if ((s = socket(AF_INET, SOCK_DGRAM, 0)) == INVALID_SOCKET)
+	{
+		printf("Could not create socket : %d", WSAGetLastError());
+	}
+	printf("Socket created.\n");
+
+	//Prepare the sockaddr_in structure
+	server.sin_family = AF_INET;
+	server.sin_addr.s_addr = INADDR_ANY;
+	server.sin_port = htons(port);
+
+	//Bind
+	if (bind(s, (struct sockaddr *)&server, sizeof(server)) == SOCKET_ERROR)
+	{
+		printf("Bind failed with error code : %d", WSAGetLastError());
+		return;
+	}
+	puts("UDP Bind done");
 }
 
-bool SocketRead::RecieveData(char* data, int& len, int& channel) {
+bool SocketRead::RecieveData(char* data, int& len, char* channel) {
+	if ((len = recvfrom(s, data, READ_LEN, 0, (struct sockaddr *) &si_other, &slen)) == SOCKET_ERROR)
+	{
+		printf("recvfrom() failed with error code : %d", WSAGetLastError());
+		return false;
+	}
+	channel = inet_ntoa(si_other.sin_addr);
+	return true;
+}
 
+void SocketRead::close()
+{
+	closesocket(s);
+	WSACleanup();
 }
 

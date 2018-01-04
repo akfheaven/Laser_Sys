@@ -16,7 +16,8 @@
 
 class ReadSensorInterface {
 public:
-	virtual bool RecieveData(char* data, int& len, int& channel) = 0;
+	virtual bool RecieveData(char* data, int& len, char* channel) = 0;
+	virtual void close() = 0;
 };
 
 #endif  //_READSENSORINTERFACE_H
