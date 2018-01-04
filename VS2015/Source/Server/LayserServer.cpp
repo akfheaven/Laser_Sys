@@ -121,7 +121,7 @@ void LayserServer::ReadDataRun()
 	}
 	else if (selectedMode == SERIAL_MODE) {
 		SerialRead* serialRead = new SerialRead();
-		serialRead->Init("COM7", 115200);
+		serialRead->Init("COM3", 115200);
 		readInterface = serialRead;
 	}
 
@@ -134,7 +134,12 @@ void LayserServer::ReadDataRun()
 		//try to receive some data, this is a blocking call
 		if (readInterface->RecieveData(buf, recv_len, recv_addr)){
 			
-			printf("[read threadrun] %lf\n", GetTickCount());
+			//printf("[read threadrun] %d\n", GetTickCount());
+			//buf[recv_len] = '\0';
+			//for (int i = 0; i < recv_len; i++)
+			//printf("%d ", (int)buf[i]);
+			//puts("");
+			//continue;
 			//printf("%lf\n", GetTickCount() - tttime);
 			//cc++;
 			//if (cc % 4 == 0)
@@ -265,11 +270,14 @@ void LayserServer::DecodeMavlink(uint8_t channel, char * data, int len)
 {
 	for (int i = 0; i < len; i++) {
 		if (mavlink_parse_char(channel, data[i], &DecodeMsg[channel], &status)) {
+#ifdef MDebug
+			printf("%d DecodeMsg[channel].msgid\n", DecodeMsg[channel].msgid);
+#endif
 			if (DecodeMsg[channel].msgid == MAVLINK_MSG_ID_ATTITUDE_QUATERNION)
 			{
 				memcpy(&pck, DecodeMsg[channel].payload64, MAVLINK_MSG_ID_ATTITUDE_QUATERNION_LEN);
 #ifdef MDebug
-				//printf("%d | %f | %f | %f\n", pck.time_boot_ms, pck.pitchspeed, pck.rollspeed, pck.yawspeed);
+				printf("%d | %f | %f | %f\n", pck.time_boot_ms, pck.pitchspeed, pck.rollspeed, pck.yawspeed);
 #endif
 				ReadTracker[channel].timeStemp = pck.time_boot_ms;
 				ReadTracker[channel].Qw = pck.q1;

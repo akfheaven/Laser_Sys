@@ -9,15 +9,16 @@
 //
 //
 
+#include <iostream>
 #include "SerialRead.h"
 
-
+using namespace std;
 void SerialRead::Init(char* port, uint32_t baudRate) {
 	mPortName = port;
 	try
 	{
-		my_serial = new serial::Serial(port, baudRate, serial::Timeout::simpleTimeout(0));
-		//my_serial = new serial::Serial(port, baudRate);// block IO
+		//my_serial = new serial::Serial(port, baudRate, serial::Timeout::simpleTimeout(0));
+		my_serial = new serial::Serial(port, baudRate);// block IO
 	}
 	catch (const std::exception& aa)
 	{
@@ -30,7 +31,11 @@ bool SerialRead::RecieveData(char* data, int& len, char* channel) {
 	result = my_serial->read(READ_LEN);
 	len = result.length();
 	if (len <= 0)return false;
-	data = const_cast<char*>(result.c_str());
+	/*for (int i = 0; i < len; i++) {
+		cout << (int)result[i] << " ";
+	}cout << endl;*/
+	memcpy(data, result.c_str(), len);
+	//data = const_cast<char*>(result.c_str());
 	channel = mPortName;
 	return true;
 }

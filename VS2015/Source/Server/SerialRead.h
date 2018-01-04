@@ -18,7 +18,7 @@
 using namespace std;
 class SerialRead : public ReadSensorInterface {
 public:
-	static const uint32_t READ_LEN = 1;
+	static const uint32_t READ_LEN = 32;
 protected:
 	serial::Serial* my_serial;
 	char* mPortName = nullptr;
