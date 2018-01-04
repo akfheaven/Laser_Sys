@@ -128,7 +128,7 @@ int TestFormView::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	
 	server = new LayserServer();
 
-	server->Start(8999);
+	server->Start();
 	
 	
 	return 0;

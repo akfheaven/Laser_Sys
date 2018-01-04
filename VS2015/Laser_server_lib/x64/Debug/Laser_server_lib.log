@@ -1,7 +1,7 @@
-﻿生成启动时间为 2018/1/4 20:06:36。
+﻿生成启动时间为 2018/1/4 22:40:10。
      1>项目“Y:\Projects\VSProjs\VS2015\Laser_sys\VS2015\Laser_server_lib\Laser_server_lib.vcxproj”在节点 2 上(Build 个目标)。
      1>ClCompile:
-         Z:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\CL.exe /c /I../Source/ThirdParty/mavlink /I../Source/Sys /I../Source/Util /I../Source/Server /ZI /nologo /W3 /WX- /Od /D AS_LIB /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Debug\\" /Fd"x64\Debug\Laser_server_lib.pdb" /Gd /TP /errorReport:prompt ..\Source\Server\LayserServer.cpp
+         Z:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\CL.exe /c /I../Source\ThirdParty\serial\include /I../Source/ThirdParty/mavlink /I../Source/Sys /I../Source/Util /I../Source/Server /ZI /nologo /W3 /WX- /Od /D AS_LIB /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Debug\\" /Fd"x64\Debug\Laser_server_lib.pdb" /Gd /TP /errorReport:prompt ..\Source\Server\LayserServer.cpp
          LayserServer.cpp
      1>y:\projects\vsprojs\vs2015\laser_sys\vs2015\source\thirdparty\mavlink\mavlink_conversions.h(48): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
      1>y:\projects\vsprojs\vs2015\laser_sys\vs2015\source\thirdparty\mavlink\mavlink_conversions.h(49): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
@@ -12,24 +12,27 @@
      1>y:\projects\vsprojs\vs2015\laser_sys\vs2015\source\thirdparty\mavlink\mavlink_conversions.h(54): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
      1>y:\projects\vsprojs\vs2015\laser_sys\vs2015\source\thirdparty\mavlink\mavlink_conversions.h(55): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
      1>y:\projects\vsprojs\vs2015\laser_sys\vs2015\source\thirdparty\mavlink\mavlink_conversions.h(56): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-     1>y:\projects\vsprojs\vs2015\laser_sys\vs2015\source\server\layserserver.cpp(225): warning C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+     1>y:\projects\vsprojs\vs2015\laser_sys\vs2015\source\server\layserserver.cpp(230): warning C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
          c:\program files (x86)\windows kits\10\include\10.0.15063.0\um\winsock2.h(1830): note: 参见“inet_addr”的声明
-     1>y:\projects\vsprojs\vs2015\laser_sys\vs2015\source\server\layserserver.cpp(239): warning C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+     1>y:\projects\vsprojs\vs2015\laser_sys\vs2015\source\server\layserserver.cpp(244): warning C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
          c:\program files (x86)\windows kits\10\include\10.0.15063.0\um\winsock2.h(1830): note: 参见“inet_addr”的声明
-     1>y:\projects\vsprojs\vs2015\laser_sys\vs2015\source\server\layserserver.cpp(190): warning C4101: “buf”: 未引用的局部变量
-     1>y:\projects\vsprojs\vs2015\laser_sys\vs2015\source\server\layserserver.cpp(189): warning C4101: “recv_len”: 未引用的局部变量
        Lib:
-         Z:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\Lib.exe /OUT:"Y:\Projects\VSProjs\VS2015\Laser_sys\VS2015\x64\Debug\Laser_server_lib.lib" /NOLOGO /MACHINE:X64 x64\Debug\LayserServer.obj
+         Z:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\Lib.exe /OUT:"Y:\Projects\VSProjs\VS2015\Laser_sys\VS2015\x64\Debug\Laser_server_lib.lib" Setupapi.lib /NOLOGO /MACHINE:X64 x64\Debug\LayserServer.obj
          x64\Debug\SerialRead.obj
          x64\Debug\SocketRead.obj
          x64\Debug\TestRead.obj
          x64\Debug\Tracker.obj
+         x64\Debug\list_ports_linux.obj
+         x64\Debug\list_ports_osx.obj
+         x64\Debug\list_ports_win.obj
+         x64\Debug\unix.obj
+         x64\Debug\win.obj
+         x64\Debug\serial.obj
          x64\Debug\SimpleThread.obj
          x64\Debug\Laser_server_debug_main.obj
-     1>Laser_server_debug_main.obj : warning LNK4221: 此对象文件未定义任何之前未定义的公共符号，因此任何耗用此库的链接操作都不会使用此文件
          Laser_server_lib.vcxproj -> Y:\Projects\VSProjs\VS2015\Laser_sys\VS2015\x64\Debug\Laser_server_lib.lib
      1>已完成生成项目“Y:\Projects\VSProjs\VS2015\Laser_sys\VS2015\Laser_server_lib\Laser_server_lib.vcxproj”(Build 个目标)的操作。
 
 已成功生成。
 
-已用时间 00:00:00.58
+已用时间 00:00:00.79

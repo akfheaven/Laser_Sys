@@ -18,6 +18,7 @@
 
 #include "ReadSensorInterface.h"
 #include "SocketRead.h"
+#include "SerialRead.h"
 #include "Tracker.h"
 #include "SimpleThread.h"
 #include "common\mavlink.h"
@@ -37,10 +38,12 @@ typedef struct {
 
 
 class LayserServer {
+protected:
+	enum READ_MODE{SERIAL_MODE, SOCKET_MODE};
 public:
 	LayserServer();
 	virtual ~LayserServer();
-	void Start(int port);
+	void Start();
 	void Stop();
 	bool setGenIdMapRealID(int GenID, int RealID);
 	vector<Tracker*>* GetTrackers();
@@ -59,14 +62,14 @@ private:
 	bool ReadContinueFlag;
 	bool SendContinueFlag;
 
-	//Read
+	//Reade
+	READ_MODE selectedMode = SOCKET_MODE;
 	ReadSensorInterface* readInterface;
+	
 
 	//UDP
-	int port = 8999;//C++11?
 	int portSend = 7777;
 	static const int MAX_BUFFER = 2048;
-	static const int READ_LEN = 2048;
 	char decodeBuffer[MAX_BUFFER];
 	CRITICAL_SECTION g_cs;
 	int readedBufferLen = 0;

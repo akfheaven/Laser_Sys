@@ -36,10 +36,7 @@ LayserServer::~LayserServer()
 	Stop();
 }
 
-void LayserServer::Start(int pPort) {
-	//port
-	port = pPort;
-
+void LayserServer::Start() {
 	//trackers
 	InitializeCriticalSection(&TrackersCpyLock);
 	Trackers = new vector<Tracker*>();
@@ -115,11 +112,19 @@ void LayserServer::ReadDataRun()
 	////sendto(s, "hhhhh", 5, 0, (sockaddr*)&si_other, slen);
 	//int cc = 0;
 
+	selectedMode = SERIAL_MODE;
 
-	SocketRead* socketRead = new SocketRead();
-	socketRead->Init(port);
+	if (selectedMode == SOCKET_MODE) {
+		SocketRead* socketRead = new SocketRead();
+		socketRead->Init(8999);
+		readInterface = socketRead;
+	}
+	else if (selectedMode == SERIAL_MODE) {
+		SerialRead* serialRead = new SerialRead();
+		serialRead->Init("COM7", 115200);
+		readInterface = serialRead;
+	}
 
-	readInterface = socketRead;
 
 	//keep listening for data
 	while (ReadContinueFlag)
@@ -129,6 +134,7 @@ void LayserServer::ReadDataRun()
 		//try to receive some data, this is a blocking call
 		if (readInterface->RecieveData(buf, recv_len, recv_addr)){
 			
+			printf("[read threadrun] %lf\n", GetTickCount());
 			//printf("%lf\n", GetTickCount() - tttime);
 			//cc++;
 			//if (cc % 4 == 0)
@@ -186,12 +192,12 @@ void LayserServer::SendDataRun()
 	//UDP SetUp
 	SOCKET s;
 	struct sockaddr_in remote;
-	int  recv_len;
-	char buf[MAX_BUFFER];
+	//int  recv_len;
+	//char buf[MAX_BUFFER];
 	WSADATA wsa;
 
 	//Initialise winsock
-	printf("\nInitialising Winsock...");
+	printf("\n[send thread run]\nInitialising Winsock...");
 	if (WSAStartup(MAKEWORD(2, 2), &wsa) != 0)
 	{
 		printf("Failed. Error Code : %d", WSAGetLastError());

@@ -9,19 +9,35 @@
 //
 //
 
-
 #include "SerialRead.h"
 
-void SerialRead::Init(char* port, int bautRate) {
 
+void SerialRead::Init(char* port, uint32_t baudRate) {
+	mPortName = port;
+	try
+	{
+		my_serial = new serial::Serial(port, baudRate, serial::Timeout::simpleTimeout(0));
+		//my_serial = new serial::Serial(port, baudRate);// block IO
+	}
+	catch (const std::exception& aa)
+	{
+		printf("serial error : %s\n", aa.what());
+		return ;
+	}
 }
 
 bool SerialRead::RecieveData(char* data, int& len, char* channel) {
-	return false;
+	result = my_serial->read(READ_LEN);
+	len = result.length();
+	if (len <= 0)return false;
+	data = const_cast<char*>(result.c_str());
+	channel = mPortName;
+	return true;
 }
 
 void SerialRead::close()
 {
-
+	my_serial->close();
+	delete my_serial;
 }
 

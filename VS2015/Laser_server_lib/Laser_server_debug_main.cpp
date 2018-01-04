@@ -11,7 +11,7 @@ int main()
 
 	LayserServer *server = new LayserServer();
 	
-	server->Start(8999);
+	server->Start();
 
 	while (1);
     return 0;

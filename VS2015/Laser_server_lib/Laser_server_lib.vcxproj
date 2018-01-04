@@ -143,12 +143,15 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>AS_LIB;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>../Source/ThirdParty/mavlink;../Source/Sys;../Source/Util;../Source/Server;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../Source\ThirdParty\serial\include;../Source/ThirdParty/mavlink;../Source/Sys;../Source/Util;../Source/Server;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <Lib>
+      <AdditionalDependencies>Setupapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='M_Debug|x64'">
     <ClCompile>
@@ -156,11 +159,12 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>AS_CODE;MDebug;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>../Source/ThirdParty/mavlink;../Source/Sys;../Source/Util;../Source/Server;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../Source\ThirdParty\serial\include;../Source/ThirdParty/mavlink;../Source/Sys;../Source/Util;../Source/Server;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>Setupapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -187,7 +191,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>../Source/ThirdParty/mavlink;../Source/Sys;../Source/Util;../Source/Server;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../Source\ThirdParty\serial\include;../Source/ThirdParty/mavlink;../Source/Sys;../Source/Util;../Source/Server;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -195,6 +199,9 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
+    <Lib>
+      <AdditionalDependencies>Setupapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -205,6 +212,12 @@
     <ClCompile Include="..\Source\Server\SocketRead.cpp" />
     <ClCompile Include="..\Source\Server\TestRead.cpp" />
     <ClCompile Include="..\Source\Sys\Tracker.cpp" />
+    <ClCompile Include="..\Source\ThirdParty\serial\src\impl\list_ports\list_ports_linux.cc" />
+    <ClCompile Include="..\Source\ThirdParty\serial\src\impl\list_ports\list_ports_osx.cc" />
+    <ClCompile Include="..\Source\ThirdParty\serial\src\impl\list_ports\list_ports_win.cc" />
+    <ClCompile Include="..\Source\ThirdParty\serial\src\impl\unix.cc" />
+    <ClCompile Include="..\Source\ThirdParty\serial\src\impl\win.cc" />
+    <ClCompile Include="..\Source\ThirdParty\serial\src\serial.cc" />
     <ClCompile Include="..\Source\Util\SimpleThread.cpp" />
     <ClCompile Include="Laser_server_debug_main.cpp" />
   </ItemGroup>

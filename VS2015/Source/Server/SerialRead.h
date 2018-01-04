@@ -12,12 +12,20 @@
 
 #if !defined(_SERIALREAD_H)
 #define _SERIALREAD_H
-
+#include <string>
+#include "serial/serial.h"
 #include "ReadSensorInterface.h"
-
+using namespace std;
 class SerialRead : public ReadSensorInterface {
 public:
-	void Init(char* port, int bautRate);
+	static const uint32_t READ_LEN = 1;
+protected:
+	serial::Serial* my_serial;
+	char* mPortName = nullptr;
+	string result;
+	
+public:
+	void Init(char* port, uint32_t baudRate);
 	bool RecieveData(char* data, int& len, char* channel);
 	void close();
 };
