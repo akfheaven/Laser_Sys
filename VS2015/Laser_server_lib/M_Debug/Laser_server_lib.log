@@ -1,0 +1,45 @@
+﻿Build started 2018/1/5 21:25:26.
+     1>Project "Y:\Projects\VSProjs\VS2015\Laser_sys\VS2015\Laser_server_lib\Laser_server_lib.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         Z:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"M_Debug\\" /Fd"M_Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\Source\Server\LayserServer.cpp ..\Source\Server\SerialRead.cpp ..\Source\Server\SocketRead.cpp ..\Source\Server\TestRead.cpp ..\Source\Sys\Tracker.cpp ..\Source\ThirdParty\serial\src\impl\list_ports\list_ports_linux.cc ..\Source\ThirdParty\serial\src\impl\list_ports\list_ports_osx.cc ..\Source\ThirdParty\serial\src\impl\list_ports\list_ports_win.cc ..\Source\ThirdParty\serial\src\impl\unix.cc ..\Source\ThirdParty\serial\src\impl\win.cc ..\Source\ThirdParty\serial\src\serial.cc ..\Source\Util\SimpleThread.cpp Laser_server_debug_main.cpp
+         Laser_server_debug_main.cpp
+     1>y:\projects\vsprojs\vs2015\laser_sys\vs2015\laser_server_lib\laser_server_debug_main.cpp(5): fatal error C1083: Cannot open include file: 'LayserServer.h': No such file or directory
+         SimpleThread.cpp
+     1>y:\projects\vsprojs\vs2015\laser_sys\vs2015\source\util\simplethread.cpp(19): warning C4273: 'SimpleThread::Start' : inconsistent dll linkage
+                 y:\projects\vsprojs\vs2015\laser_sys\vs2015\source\util\simplethread.h(38) : see previous definition of 'Start'
+     1>y:\projects\vsprojs\vs2015\laser_sys\vs2015\source\util\simplethread.cpp(25): warning C4273: 'SimpleThread::Stop' : inconsistent dll linkage
+                 y:\projects\vsprojs\vs2015\laser_sys\vs2015\source\util\simplethread.h(39) : see previous definition of 'Stop'
+     1>y:\projects\vsprojs\vs2015\laser_sys\vs2015\source\util\simplethread.cpp(29): warning C4273: 'SimpleThread::SetRun' : inconsistent dll linkage
+                 y:\projects\vsprojs\vs2015\laser_sys\vs2015\source\util\simplethread.h(40) : see previous definition of 'SetRun'
+     1>y:\projects\vsprojs\vs2015\laser_sys\vs2015\source\util\simplethread.cpp(34): warning C4273: 'SimpleThread::ThreadEntryWarp' : inconsistent dll linkage
+                 y:\projects\vsprojs\vs2015\laser_sys\vs2015\source\util\simplethread.h(44) : see previous definition of 'ThreadEntryWarp'
+     1>y:\projects\vsprojs\vs2015\laser_sys\vs2015\source\util\simplethread.cpp(41): warning C4273: 'SimpleThread::ThreadRunner' : inconsistent dll linkage
+                 y:\projects\vsprojs\vs2015\laser_sys\vs2015\source\util\simplethread.h(45) : see previous definition of 'ThreadRunner'
+         serial.cc
+     1>y:\projects\vsprojs\vs2015\laser_sys\vs2015\source\thirdparty\serial\src\serial.cc(12): fatal error C1083: Cannot open include file: 'serial/serial.h': No such file or directory
+         win.cc
+     1>y:\projects\vsprojs\vs2015\laser_sys\vs2015\source\thirdparty\serial\src\impl\win.cc(7): fatal error C1083: Cannot open include file: 'serial/impl/win.h': No such file or directory
+         unix.cc
+         list_ports_win.cc
+     1>y:\projects\vsprojs\vs2015\laser_sys\vs2015\source\thirdparty\serial\src\impl\list_ports\list_ports_win.cc(10): fatal error C1083: Cannot open include file: 'serial/serial.h': No such file or directory
+         list_ports_osx.cc
+         list_ports_linux.cc
+         Tracker.cpp
+     1>y:\projects\vsprojs\vs2015\laser_sys\vs2015\source\sys\tracker.cpp(15): warning C4273: 'Tracker::Tracker' : inconsistent dll linkage
+                 y:\projects\vsprojs\vs2015\laser_sys\vs2015\source\sys\tracker.h(52) : see previous definition of '{ctor}'
+     1>y:\projects\vsprojs\vs2015\laser_sys\vs2015\source\sys\tracker.cpp(29): warning C4273: 'Tracker::Test' : inconsistent dll linkage
+                 y:\projects\vsprojs\vs2015\laser_sys\vs2015\source\sys\tracker.h(54) : see previous definition of 'Test'
+         TestRead.cpp
+         SocketRead.cpp
+     1>y:\projects\vsprojs\vs2015\laser_sys\vs2015\source\server\socketread.cpp(52): warning C4996: 'inet_ntoa': Use inet_ntop() or InetNtop() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+                 c:\program files (x86)\windows kits\8.1\include\um\winsock2.h(1868) : see declaration of 'inet_ntoa'
+         SerialRead.cpp
+     1>y:\projects\vsprojs\vs2015\laser_sys\vs2015\source\server\serialread.h(16): fatal error C1083: Cannot open include file: 'serial/serial.h': No such file or directory
+         LayserServer.cpp
+     1>y:\projects\vsprojs\vs2015\laser_sys\vs2015\source\server\serialread.h(16): fatal error C1083: Cannot open include file: 'serial/serial.h': No such file or directory
+         Generating Code...
+     1>Done Building Project "Y:\Projects\VSProjs\VS2015\Laser_sys\VS2015\Laser_server_lib\Laser_server_lib.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:01.66

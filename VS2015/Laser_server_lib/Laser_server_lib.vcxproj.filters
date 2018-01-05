@@ -37,6 +37,9 @@
     <Filter Include="源文件\ThirdParty\serial\Imp\list_ports">
       <UniqueIdentifier>{628db7cf-b724-4b69-a6aa-c1e9acfb1630}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\ThirdParty\pnp">
+      <UniqueIdentifier>{168f5110-7c02-4405-84ed-c6b78c2a761c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />

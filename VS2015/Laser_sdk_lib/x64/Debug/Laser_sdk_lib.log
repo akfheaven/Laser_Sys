@@ -1,25 +1,27 @@
-﻿生成启动时间为 2018/1/4 18:48:46。
-     1>项目“Y:\Projects\VSProjs\VS2015\Laser_sys\VS2015\Laser_sdk_lib\Laser_sdk_lib.vcxproj”在节点 2 上(Build 个目标)。
+﻿Build started 2018/1/5 20:31:38.
+     1>Project "Y:\Projects\VSProjs\VS2015\Laser_sys\VS2015\Laser_sdk_lib\Laser_sdk_lib.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         Z:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\CL.exe /c /I..\Source\ /I..\Source\SDK /ZI /nologo /W3 /WX- /Od /D _DEBUG /D DLL_API /D _LIB /D _WINDLL /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Debug\\" /Fd"x64\Debug\vc140.pdb" /Gd /TP /errorReport:prompt ..\Source\SDK\LayserSDK.cpp ..\Source\Sys\Tracker.cpp ..\Source\Util\SimpleThread.cpp
+         Z:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /I..\Source\ /I..\Source\SDK /Zi /nologo /W3 /WX- /Od /D _DEBUG /D DLL_API /D _LIB /D _WINDLL /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Debug\\" /Fd"x64\Debug\vc120.pdb" /Gd /TP /errorReport:prompt ..\Source\SDK\LayserSDK.cpp ..\Source\Sys\Tracker.cpp ..\Source\Util\SimpleThread.cpp Test_main.cpp
+         Test_main.cpp
          SimpleThread.cpp
-     1>y:\projects\vsprojs\vs2015\laser_sys\vs2015\source\util\simplethread.h(22): warning C4005: “DLL_API”: 宏重定义
-         y:\projects\vsprojs\vs2015\laser_sys\vs2015\source\util\simplethread.h(22): note: 命令行参数: 参见前面的“DLL_API”定义
+     1>y:\projects\vsprojs\vs2015\laser_sys\vs2015\source\util\SimpleThread.h(22): warning C4005: 'DLL_API' : macro redefinition
+                 command-line arguments :  see previous definition of 'DLL_API'
          Tracker.cpp
-     1>y:\projects\vsprojs\vs2015\laser_sys\vs2015\source\sys\tracker.h(22): warning C4005: “DLL_API”: 宏重定义
-         y:\projects\vsprojs\vs2015\laser_sys\vs2015\source\sys\tracker.h(22): note: 命令行参数: 参见前面的“DLL_API”定义
+     1>y:\projects\vsprojs\vs2015\laser_sys\vs2015\source\sys\Tracker.h(22): warning C4005: 'DLL_API' : macro redefinition
+                 command-line arguments :  see previous definition of 'DLL_API'
          LayserSDK.cpp
-     1>y:\projects\vsprojs\vs2015\laser_sys\vs2015\source\sdk\laysersdk.h(22): warning C4005: “DLL_API”: 宏重定义
-         y:\projects\vsprojs\vs2015\laser_sys\vs2015\source\sdk\laysersdk.h(22): note: 命令行参数: 参见前面的“DLL_API”定义
-         正在生成代码...
+     1>y:\projects\vsprojs\vs2015\laser_sys\vs2015\source\sdk\LayserSDK.h(22): warning C4005: 'DLL_API' : macro redefinition
+                 command-line arguments :  see previous definition of 'DLL_API'
+         Generating Code...
        Link:
-         Z:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"Y:\Projects\VSProjs\VS2015\Laser_sys\VS2015\x64\Debug\Laser_sdk_lib.dll" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"Y:\Projects\VSProjs\VS2015\Laser_sys\VS2015\x64\Debug\Laser_sdk_lib.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"Y:\Projects\VSProjs\VS2015\Laser_sys\VS2015\x64\Debug\Laser_sdk_lib.lib" /MACHINE:X64 /DLL x64\Debug\LayserSDK.obj
+         Z:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"Y:\Projects\VSProjs\VS2015\Laser_sys\VS2015\x64\Debug\Laser_sdk_lib.dll" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"Y:\Projects\VSProjs\VS2015\Laser_sys\VS2015\x64\Debug\Laser_sdk_lib.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"Y:\Projects\VSProjs\VS2015\Laser_sys\VS2015\x64\Debug\Laser_sdk_lib.lib" /MACHINE:X64 /DLL x64\Debug\LayserSDK.obj
          x64\Debug\Tracker.obj
          x64\Debug\SimpleThread.obj
          x64\Debug\Test_main.obj
+            Creating library Y:\Projects\VSProjs\VS2015\Laser_sys\VS2015\x64\Debug\Laser_sdk_lib.lib and object Y:\Projects\VSProjs\VS2015\Laser_sys\VS2015\x64\Debug\Laser_sdk_lib.exp
          Laser_sdk_lib.vcxproj -> Y:\Projects\VSProjs\VS2015\Laser_sys\VS2015\x64\Debug\Laser_sdk_lib.dll
-     1>已完成生成项目“Y:\Projects\VSProjs\VS2015\Laser_sys\VS2015\Laser_sdk_lib\Laser_sdk_lib.vcxproj”(Build 个目标)的操作。
+     1>Done Building Project "Y:\Projects\VSProjs\VS2015\Laser_sys\VS2015\Laser_sdk_lib\Laser_sdk_lib.vcxproj" (Build target(s)).
 
-已成功生成。
+Build succeeded.
 
-已用时间 00:00:00.85
+Time Elapsed 00:00:01.39

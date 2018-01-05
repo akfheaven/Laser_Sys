@@ -121,7 +121,9 @@ void LayserServer::ReadDataRun()
 	}
 	else if (selectedMode == SERIAL_MODE) {
 		SerialRead* serialRead = new SerialRead();
-		serialRead->Init("COM3", 115200);
+		while(!serialRead->Init("COM7", 115200)) {
+			Sleep(1000);
+		}
 		readInterface = serialRead;
 	}
 

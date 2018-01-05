@@ -1,17 +1,17 @@
-﻿生成启动时间为 2018/1/4 18:47:57。
-     1>项目“Y:\Projects\VSProjs\VS2015\Laser_sys\VS2015\Laser_sdk_lib\Laser_sdk_lib.vcxproj”在节点 2 上(Build 个目标)。
+﻿Build started 2018/1/5 20:29:22.
+     1>Project "Y:\Projects\VSProjs\VS2015\Laser_sys\VS2015\Laser_sdk_lib\Laser_sdk_lib.vcxproj" on node 2 (Build target(s)).
      1>Link:
-         Z:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"Y:\Projects\VSProjs\VS2015\Laser_sys\VS2015\x64\MDebug\Laser_sdk_lib.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"Y:\Projects\VSProjs\VS2015\Laser_sys\VS2015\x64\MDebug\Laser_sdk_lib.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"Y:\Projects\VSProjs\VS2015\Laser_sys\VS2015\x64\MDebug\Laser_sdk_lib.lib" /MACHINE:X64 x64\MDebug\LayserSDK.obj
+         Z:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"Y:\Projects\VSProjs\VS2015\Laser_sys\VS2015\x64\MDebug\Laser_sdk_lib.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"Y:\Projects\VSProjs\VS2015\Laser_sys\VS2015\x64\MDebug\Laser_sdk_lib.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"Y:\Projects\VSProjs\VS2015\Laser_sys\VS2015\x64\MDebug\Laser_sdk_lib.lib" /MACHINE:X64 x64\MDebug\LayserSDK.obj
          x64\MDebug\Tracker.obj
          x64\MDebug\SimpleThread.obj
          x64\MDebug\Test_main.obj
-           正在创建库 Y:\Projects\VSProjs\VS2015\Laser_sys\VS2015\x64\MDebug\Laser_sdk_lib.lib 和对象 Y:\Projects\VSProjs\VS2015\Laser_sys\VS2015\x64\MDebug\Laser_sdk_lib.exp
-     1>Test_main.obj : warning LNK4217: 本地定义的符号 ?Start@LayserSDK@@QEAAXXZ (public: void __cdecl LayserSDK::Start(void)) 在函数 main 中导入
-     1>Test_main.obj : warning LNK4217: 本地定义的符号 ?GetChipData@LayserSDK@@QEAAPEAVTracker@@E@Z (public: class Tracker * __cdecl LayserSDK::GetChipData(unsigned char)) 在函数 main 中导入
-     1>Test_main.obj : error LNK2019: 无法解析的外部符号 "__declspec(dllimport) public: __cdecl LayserSDK::LayserSDK(void)" (__imp_??0LayserSDK@@QEAA@XZ)，该符号在函数 main 中被引用
-     1>Y:\Projects\VSProjs\VS2015\Laser_sys\VS2015\x64\MDebug\Laser_sdk_lib.exe : fatal error LNK1120: 1 个无法解析的外部命令
-     1>已完成生成项目“Y:\Projects\VSProjs\VS2015\Laser_sys\VS2015\Laser_sdk_lib\Laser_sdk_lib.vcxproj”(Build 个目标)的操作 - 失败。
+            Creating library Y:\Projects\VSProjs\VS2015\Laser_sys\VS2015\x64\MDebug\Laser_sdk_lib.lib and object Y:\Projects\VSProjs\VS2015\Laser_sys\VS2015\x64\MDebug\Laser_sdk_lib.exp
+     1>Test_main.obj : warning LNK4217: locally defined symbol ?Start@LayserSDK@@QEAAXXZ (public: void __cdecl LayserSDK::Start(void)) imported in function main
+     1>Test_main.obj : warning LNK4217: locally defined symbol ?GetChipData@LayserSDK@@QEAAPEAVTracker@@E@Z (public: class Tracker * __cdecl LayserSDK::GetChipData(unsigned char)) imported in function main
+     1>Test_main.obj : error LNK2019: unresolved external symbol "__declspec(dllimport) public: __cdecl LayserSDK::LayserSDK(void)" (__imp_??0LayserSDK@@QEAA@XZ) referenced in function main
+     1>Y:\Projects\VSProjs\VS2015\Laser_sys\VS2015\x64\MDebug\Laser_sdk_lib.exe : fatal error LNK1120: 1 unresolved externals
+     1>Done Building Project "Y:\Projects\VSProjs\VS2015\Laser_sys\VS2015\Laser_sdk_lib\Laser_sdk_lib.vcxproj" (Build target(s)) -- FAILED.
 
-生成失败。
+Build FAILED.
 
-已用时间 00:00:00.09
+Time Elapsed 00:00:00.09

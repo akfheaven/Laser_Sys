@@ -25,7 +25,7 @@ protected:
 	string result;
 	
 public:
-	void Init(char* port, uint32_t baudRate);
+	bool Init(char* port, uint32_t baudRate);
 	bool RecieveData(char* data, int& len, char* channel);
 	void close();
 };

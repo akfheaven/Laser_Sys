@@ -1,14 +1,12 @@
-﻿生成启动时间为 2018/1/4 18:47:31。
-     1>项目“Y:\Projects\VSProjs\VS2015\Laser_sys\VS2015\Laser_sdk_test\Laser_sdk_test.vcxproj”在节点 2 上(Build 个目标)。
-     1>ClCompile:
-         Z:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\CL.exe /c /I..\Source\ /I..\Source\SDK /ZI /nologo /W3 /WX- /Od /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Debug\\" /Fd"x64\Debug\vc140.pdb" /Gd /TP /errorReport:prompt Laser_sdk_test.cpp
-         Laser_sdk_test.cpp
-       Link:
-         Z:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"Y:\Projects\VSProjs\VS2015\Laser_sys\VS2015\x64\Debug\Laser_sdk_test.exe" /INCREMENTAL /NOLOGO /LIBPATH:..\x64\Debug Laser_sdk_lib.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"Y:\Projects\VSProjs\VS2015\Laser_sys\VS2015\x64\Debug\Laser_sdk_test.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"Y:\Projects\VSProjs\VS2015\Laser_sys\VS2015\x64\Debug\Laser_sdk_test.lib" /MACHINE:X64 x64\Debug\Laser_sdk_test.obj
+﻿Build started 2018/1/5 20:32:17.
+     1>Project "Y:\Projects\VSProjs\VS2015\Laser_sys\VS2015\Laser_sdk_test\Laser_sdk_test.vcxproj" on node 2 (Build target(s)).
+     1>Link:
+         Z:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"Y:\Projects\VSProjs\VS2015\Laser_sys\VS2015\x64\Debug\Laser_sdk_test.exe" /INCREMENTAL /NOLOGO /LIBPATH:..\x64\Debug Laser_sdk_lib.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"Y:\Projects\VSProjs\VS2015\Laser_sys\VS2015\x64\Debug\Laser_sdk_test.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"Y:\Projects\VSProjs\VS2015\Laser_sys\VS2015\x64\Debug\Laser_sdk_test.lib" /MACHINE:X64 x64\Debug\Laser_sdk_test.obj
          x64\Debug\stdafx.obj
+         Y:\Projects\VSProjs\VS2015\Laser_sys\VS2015\x64\Debug\Laser_sdk_lib.lib
          Laser_sdk_test.vcxproj -> Y:\Projects\VSProjs\VS2015\Laser_sys\VS2015\x64\Debug\Laser_sdk_test.exe
-     1>已完成生成项目“Y:\Projects\VSProjs\VS2015\Laser_sys\VS2015\Laser_sdk_test\Laser_sdk_test.vcxproj”(Build 个目标)的操作。
+     1>Done Building Project "Y:\Projects\VSProjs\VS2015\Laser_sys\VS2015\Laser_sdk_test\Laser_sdk_test.vcxproj" (Build target(s)).
 
-已成功生成。
+Build succeeded.
 
-已用时间 00:00:00.52
+Time Elapsed 00:00:00.18

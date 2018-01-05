@@ -13,7 +13,7 @@
 #include "SerialRead.h"
 
 using namespace std;
-void SerialRead::Init(char* port, uint32_t baudRate) {
+bool SerialRead::Init(char* port, uint32_t baudRate) {
 	mPortName = port;
 	try
 	{
@@ -23,8 +23,9 @@ void SerialRead::Init(char* port, uint32_t baudRate) {
 	catch (const std::exception& aa)
 	{
 		printf("serial error : %s\n", aa.what());
-		return ;
+		return false;
 	}
+	return true;
 }
 
 bool SerialRead::RecieveData(char* data, int& len, char* channel) {
