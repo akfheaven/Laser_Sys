@@ -1,31 +1,7 @@
-﻿Build started 2018/1/5 21:30:48.
-     1>Project "Y:\Projects\VSProjs\VS2015\Laser_sys\VS2015\Laser_server_lib\Laser_server_lib.vcxproj" on node 2 (Build target(s)).
+﻿生成启动时间为 2018/1/5 23:29:49。
+     1>项目“Y:\Projects\VSProjs\VS2015\Laser_sys\VS2015\Laser_server_lib\Laser_server_lib.vcxproj”在节点 2 上(Build 个目标)。
      1>ClCompile:
-         Z:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /I..\Source\ThirdParty\opencv_pnp\include /I../Source\ThirdParty\serial\include /I../Source/ThirdParty/mavlink /I../Source/Sys /I../Source/Util /I../Source/Server /Zi /nologo /W3 /WX- /Od /D _ALLOW_MSC_VER_MISMATCH /D AS_CODE /D MDebug /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\M_Debug\\" /Fd"x64\M_Debug\vc120.pdb" /Gd /TP /errorReport:prompt ..\Source\Server\LayserServer.cpp ..\Source\Server\SerialRead.cpp ..\Source\Server\SocketRead.cpp ..\Source\Server\TestRead.cpp ..\Source\Sys\Tracker.cpp ..\Source\ThirdParty\serial\src\impl\list_ports\list_ports_linux.cc ..\Source\ThirdParty\serial\src\impl\list_ports\list_ports_osx.cc ..\Source\ThirdParty\serial\src\impl\list_ports\list_ports_win.cc ..\Source\ThirdParty\serial\src\impl\unix.cc ..\Source\ThirdParty\serial\src\impl\win.cc ..\Source\ThirdParty\serial\src\serial.cc ..\Source\Util\SimpleThread.cpp Laser_server_debug_main.cpp
-         Laser_server_debug_main.cpp
-     1>y:\projects\vsprojs\vs2015\laser_sys\vs2015\source\thirdparty\mavlink\mavlink_conversions.h(48): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>y:\projects\vsprojs\vs2015\laser_sys\vs2015\source\thirdparty\mavlink\mavlink_conversions.h(49): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>y:\projects\vsprojs\vs2015\laser_sys\vs2015\source\thirdparty\mavlink\mavlink_conversions.h(50): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>y:\projects\vsprojs\vs2015\laser_sys\vs2015\source\thirdparty\mavlink\mavlink_conversions.h(51): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>y:\projects\vsprojs\vs2015\laser_sys\vs2015\source\thirdparty\mavlink\mavlink_conversions.h(52): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>y:\projects\vsprojs\vs2015\laser_sys\vs2015\source\thirdparty\mavlink\mavlink_conversions.h(53): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>y:\projects\vsprojs\vs2015\laser_sys\vs2015\source\thirdparty\mavlink\mavlink_conversions.h(54): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>y:\projects\vsprojs\vs2015\laser_sys\vs2015\source\thirdparty\mavlink\mavlink_conversions.h(55): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>y:\projects\vsprojs\vs2015\laser_sys\vs2015\source\thirdparty\mavlink\mavlink_conversions.h(56): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-         SimpleThread.cpp
-         serial.cc
-         win.cc
-         unix.cc
-         list_ports_win.cc
-         list_ports_osx.cc
-         list_ports_linux.cc
-         Tracker.cpp
-         TestRead.cpp
-         SocketRead.cpp
-     1>..\Source\Server\SocketRead.cpp(52): warning C4996: 'inet_ntoa': Use inet_ntop() or InetNtop() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
-                 C:\Program Files (x86)\Windows Kits\8.1\Include\um\winsock2.h(1868) : see declaration of 'inet_ntoa'
-         SerialRead.cpp
-     1>..\Source\Server\SerialRead.cpp(33): warning C4267: '=' : conversion from 'size_t' to 'int', possible loss of data
+         Z:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /I..\Source\ThirdParty\opencv_pnp\include /I../Source\ThirdParty\serial\include /I../Source/ThirdParty/mavlink /I../Source/Sys /I../Source/Util /I../Source/Server /Zi /nologo /W3 /WX- /Od /D AS_CODE /D MDebug /D NDEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\M_Debug\\" /Fd"x64\M_Debug\vc120.pdb" /Gd /TP /errorReport:prompt ..\Source\Server\LayserServer.cpp
          LayserServer.cpp
      1>y:\projects\vsprojs\vs2015\laser_sys\vs2015\source\thirdparty\mavlink\mavlink_conversions.h(48): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
      1>y:\projects\vsprojs\vs2015\laser_sys\vs2015\source\thirdparty\mavlink\mavlink_conversions.h(49): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
@@ -40,9 +16,8 @@
                  C:\Program Files (x86)\Windows Kits\8.1\Include\um\winsock2.h(1850) : see declaration of 'inet_addr'
      1>..\Source\Server\LayserServer.cpp(252): warning C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
                  C:\Program Files (x86)\Windows Kits\8.1\Include\um\winsock2.h(1850) : see declaration of 'inet_addr'
-         Generating Code...
        Link:
-         Z:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"Y:\Projects\VSProjs\VS2015\Laser_sys\VS2015\x64\M_Debug\Laser_server_lib.exe" /INCREMENTAL /NOLOGO /LIBPATH:..\Source\ThirdParty\opencv_pnp\lib\Debug Setupapi.lib opencv_core2413d.lib opencv_calib3d2413d.lib opencv_imgproc2413d.lib zlibd.lib cudart_static.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"Y:\Projects\VSProjs\VS2015\Laser_sys\VS2015\x64\M_Debug\Laser_server_lib.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"Y:\Projects\VSProjs\VS2015\Laser_sys\VS2015\x64\M_Debug\Laser_server_lib.lib" /MACHINE:X64 x64\M_Debug\LayserServer.obj
+         Z:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"Y:\Projects\VSProjs\VS2015\Laser_sys\VS2015\x64\M_Debug\Laser_server_lib.exe" /INCREMENTAL /NOLOGO /LIBPATH:..\Source\ThirdParty\opencv_pnp\lib\Release Setupapi.lib opencv_core2413.lib opencv_calib3d2413.lib opencv_imgproc2413.lib zlib.lib cudart_static.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"Y:\Projects\VSProjs\VS2015\Laser_sys\VS2015\x64\M_Debug\Laser_server_lib.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"Y:\Projects\VSProjs\VS2015\Laser_sys\VS2015\x64\M_Debug\Laser_server_lib.lib" /MACHINE:X64 x64\M_Debug\LayserServer.obj
          x64\M_Debug\SerialRead.obj
          x64\M_Debug\SocketRead.obj
          x64\M_Debug\TestRead.obj
@@ -55,59 +30,9 @@
          x64\M_Debug\serial.obj
          x64\M_Debug\SimpleThread.obj
          x64\M_Debug\Laser_server_debug_main.obj
-     1>libcpmtd.lib(xlock.obj) : error LNK2038: mismatch detected for '_MSC_VER': value '1800' doesn't match value '1900' in opencv_imgproc2413d.lib(undistort.obj)
-     1>libcpmtd.lib(stdthrow.obj) : error LNK2038: mismatch detected for '_MSC_VER': value '1800' doesn't match value '1900' in opencv_imgproc2413d.lib(undistort.obj)
-     1>libcpmtd.lib(xthrow.obj) : error LNK2038: mismatch detected for '_MSC_VER': value '1800' doesn't match value '1900' in opencv_imgproc2413d.lib(undistort.obj)
-     1>libcpmtd.lib(syserror.obj) : error LNK2038: mismatch detected for '_MSC_VER': value '1800' doesn't match value '1900' in opencv_imgproc2413d.lib(undistort.obj)
-     1>libcpmtd.lib(uncaught.obj) : error LNK2038: mismatch detected for '_MSC_VER': value '1800' doesn't match value '1900' in opencv_imgproc2413d.lib(undistort.obj)
-     1>libcpmtd.lib(locale0.obj) : error LNK2038: mismatch detected for '_MSC_VER': value '1800' doesn't match value '1900' in opencv_imgproc2413d.lib(undistort.obj)
-     1>libcpmtd.lib(xdebug.obj) : error LNK2038: mismatch detected for '_MSC_VER': value '1800' doesn't match value '1900' in opencv_imgproc2413d.lib(undistort.obj)
-     1>libcpmtd.lib(ios.obj) : error LNK2038: mismatch detected for '_MSC_VER': value '1800' doesn't match value '1900' in opencv_imgproc2413d.lib(undistort.obj)
-     1>libcpmtd.lib(newaop.obj) : error LNK2038: mismatch detected for '_MSC_VER': value '1800' doesn't match value '1900' in opencv_imgproc2413d.lib(undistort.obj)
-     1>libcpmtd.lib(iosptrs.obj) : error LNK2038: mismatch detected for '_MSC_VER': value '1800' doesn't match value '1900' in opencv_imgproc2413d.lib(undistort.obj)
-     1>libcpmtd.lib(locale.obj) : error LNK2038: mismatch detected for '_MSC_VER': value '1800' doesn't match value '1900' in opencv_imgproc2413d.lib(undistort.obj)
-     1>libcpmtd.lib(wlocale.obj) : error LNK2038: mismatch detected for '_MSC_VER': value '1800' doesn't match value '1900' in opencv_imgproc2413d.lib(undistort.obj)
-     1>libcpmtd.lib(xlocale.obj) : error LNK2038: mismatch detected for '_MSC_VER': value '1800' doesn't match value '1900' in opencv_imgproc2413d.lib(undistort.obj)
-     1>libcpmtd.lib(xdateord.obj) : error LNK2038: mismatch detected for '_MSC_VER': value '1800' doesn't match value '1900' in opencv_imgproc2413d.lib(undistort.obj)
-     1>LIBCMTD.lib(printf.obj) : error LNK2005: printf already defined in opencv_imgproc2413d.lib(undistort.obj)
-     1>opencv_core2413d.lib(system.obj) : error LNK2038: mismatch detected for '_MSC_VER': value '1800' doesn't match value '1900' in opencv_imgproc2413d.lib(undistort.obj)
-     1>opencv_core2413d.lib(alloc.obj) : error LNK2038: mismatch detected for '_MSC_VER': value '1800' doesn't match value '1900' in opencv_imgproc2413d.lib(undistort.obj)
-     1>opencv_core2413d.lib(matrix.obj) : error LNK2038: mismatch detected for '_MSC_VER': value '1800' doesn't match value '1900' in opencv_imgproc2413d.lib(undistort.obj)
-     1>opencv_core2413d.lib(copy.obj) : error LNK2038: mismatch detected for '_MSC_VER': value '1800' doesn't match value '1900' in opencv_imgproc2413d.lib(undistort.obj)
-     1>opencv_core2413d.lib(convert.obj) : error LNK2038: mismatch detected for '_MSC_VER': value '1800' doesn't match value '1900' in opencv_imgproc2413d.lib(undistort.obj)
-     1>opencv_core2413d.lib(matop.obj) : error LNK2038: mismatch detected for '_MSC_VER': value '1800' doesn't match value '1900' in opencv_imgproc2413d.lib(undistort.obj)
-     1>opencv_core2413d.lib(array.obj) : error LNK2038: mismatch detected for '_MSC_VER': value '1800' doesn't match value '1900' in opencv_imgproc2413d.lib(undistort.obj)
-     1>opencv_core2413d.lib(matmul.obj) : error LNK2038: mismatch detected for '_MSC_VER': value '1800' doesn't match value '1900' in opencv_imgproc2413d.lib(undistort.obj)
-     1>opencv_core2413d.lib(lapack.obj) : error LNK2038: mismatch detected for '_MSC_VER': value '1800' doesn't match value '1900' in opencv_imgproc2413d.lib(undistort.obj)
-     1>opencv_core2413d.lib(parallel.obj) : error LNK2038: mismatch detected for '_MSC_VER': value '1800' doesn't match value '1900' in opencv_imgproc2413d.lib(undistort.obj)
-     1>opencv_core2413d.lib(mathfuncs.obj) : error LNK2038: mismatch detected for '_MSC_VER': value '1800' doesn't match value '1900' in opencv_imgproc2413d.lib(undistort.obj)
-     1>opencv_core2413d.lib(stat.obj) : error LNK2038: mismatch detected for '_MSC_VER': value '1800' doesn't match value '1900' in opencv_imgproc2413d.lib(undistort.obj)
-     1>opencv_core2413d.lib(arithm.obj) : error LNK2038: mismatch detected for '_MSC_VER': value '1800' doesn't match value '1900' in opencv_imgproc2413d.lib(undistort.obj)
-     1>opencv_core2413d.lib(dxt.obj) : error LNK2038: mismatch detected for '_MSC_VER': value '1800' doesn't match value '1900' in opencv_imgproc2413d.lib(undistort.obj)
-     1>opencv_core2413d.lib(datastructs.obj) : error LNK2038: mismatch detected for '_MSC_VER': value '1800' doesn't match value '1900' in opencv_imgproc2413d.lib(undistort.obj)
-     1>opencv_core2413d.lib(opencv_core_pch.obj) : error LNK2038: mismatch detected for '_MSC_VER': value '1800' doesn't match value '1900' in opencv_imgproc2413d.lib(undistort.obj)
-     1>opencv_core2413d.lib(rand.obj) : error LNK2038: mismatch detected for '_MSC_VER': value '1800' doesn't match value '1900' in opencv_imgproc2413d.lib(undistort.obj)
-     1>opencv_core2413d.lib(gpumat.obj) : error LNK2038: mismatch detected for '_MSC_VER': value '1800' doesn't match value '1900' in opencv_imgproc2413d.lib(undistort.obj)
-     1>opencv_core2413d.lib(opengl_interop_deprecated.obj) : error LNK2038: mismatch detected for '_MSC_VER': value '1800' doesn't match value '1900' in opencv_imgproc2413d.lib(undistort.obj)
-     1>opencv_core2413d.lib(opengl_interop.obj) : error LNK2038: mismatch detected for '_MSC_VER': value '1800' doesn't match value '1900' in opencv_imgproc2413d.lib(undistort.obj)
-     1>opencv_core2413d.lib(persistence.obj) : error LNK2038: mismatch detected for '_MSC_VER': value '1800' doesn't match value '1900' in opencv_imgproc2413d.lib(undistort.obj)
-     1>opencv_core2413d.lib(tables.obj) : error LNK2038: mismatch detected for '_MSC_VER': value '1800' doesn't match value '1900' in opencv_imgproc2413d.lib(undistort.obj)
-     1>opencv_core2413d.lib(cuda_compile_generated_matrix_operations.cu.obj) : error LNK2038: mismatch detected for '_MSC_VER': value '1800' doesn't match value '1900' in opencv_imgproc2413d.lib(undistort.obj)
-     1>zlibd.lib(gzlib.obj) : error LNK2005: _vsprintf_l already defined in LIBCMTD.lib(vsprintf.obj)
-     1>zlibd.lib(gzlib.obj) : error LNK2005: sprintf already defined in LIBCMTD.lib(sprintf.obj)
-     1>libcpmtd.lib(cerr.obj) : error LNK2038: mismatch detected for '_MSC_VER': value '1800' doesn't match value '1900' in opencv_imgproc2413d.lib(undistort.obj)
-     1>LIBCMTD.lib(vfprintf.obj) : error LNK2005: _vfprintf_l already defined in opencv_imgproc2413d.lib(undistort.obj)
-            Creating library Y:\Projects\VSProjs\VS2015\Laser_sys\VS2015\x64\M_Debug\Laser_server_lib.lib and object Y:\Projects\VSProjs\VS2015\Laser_sys\VS2015\x64\M_Debug\Laser_server_lib.exp
-     1>opencv_imgproc2413d.lib(undistort.obj) : error LNK2019: unresolved external symbol __acrt_iob_func referenced in function printf
-     1>opencv_imgproc2413d.lib(undistort.obj) : error LNK2019: unresolved external symbol __stdio_common_vfprintf referenced in function _vfprintf_l
-     1>opencv_imgproc2413d.lib(imgwarp.obj) : error LNK2019: unresolved external symbol "void __cdecl `eh vector destructor iterator'(void *,unsigned __int64,unsigned __int64,void (__cdecl*)(void *))" (??_M@YAXPEAX_K1P6AX0@Z@Z) referenced in function "void __cdecl cv::convertMaps(class cv::_InputArray const &,class cv::_InputArray const &,class cv::_OutputArray const &,class cv::_OutputArray const &,int,bool)" (?convertMaps@cv@@YAXAEBV_InputArray@1@0AEBV_OutputArray@1@1H_N@Z)
-     1>opencv_imgproc2413d.lib(imgwarp.obj) : error LNK2019: unresolved external symbol "void __cdecl operator delete(void *,unsigned __int64)" (??3@YAXPEAX_K@Z) referenced in function "public: virtual void * __cdecl cv::ResizeArea_Invoker<unsigned char,float>::`scalar deleting destructor'(unsigned int)" (??_G?$ResizeArea_Invoker@EM@cv@@UEAAPEAXI@Z)
-     1>opencv_imgproc2413d.lib(filter.obj) : error LNK2001: unresolved external symbol "void __cdecl operator delete(void *,unsigned __int64)" (??3@YAXPEAX_K@Z)
-     1>zlibd.lib(gzwrite.obj) : error LNK2019: unresolved external symbol __stdio_common_vsprintf referenced in function vsnprintf
-     1>zlibd.lib(gzlib.obj) : error LNK2001: unresolved external symbol __stdio_common_vsprintf
-     1>Y:\Projects\VSProjs\VS2015\Laser_sys\VS2015\x64\M_Debug\Laser_server_lib.exe : fatal error LNK1120: 5 unresolved externals
-     1>Done Building Project "Y:\Projects\VSProjs\VS2015\Laser_sys\VS2015\Laser_server_lib\Laser_server_lib.vcxproj" (Build target(s)) -- FAILED.
+         Laser_server_lib.vcxproj -> Y:\Projects\VSProjs\VS2015\Laser_sys\VS2015\x64\M_Debug\Laser_server_lib.exe
+     1>已完成生成项目“Y:\Projects\VSProjs\VS2015\Laser_sys\VS2015\Laser_server_lib\Laser_server_lib.vcxproj”(Build 个目标)的操作。
 
-Build FAILED.
+已成功生成。
 
-Time Elapsed 00:00:03.46
+已用时间 00:00:00.74

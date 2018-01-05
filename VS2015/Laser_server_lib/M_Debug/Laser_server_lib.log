@@ -1,5 +1,5 @@
-﻿Build started 2018/1/5 21:25:26.
-     1>Project "Y:\Projects\VSProjs\VS2015\Laser_sys\VS2015\Laser_server_lib\Laser_server_lib.vcxproj" on node 2 (Build target(s)).
+﻿Build started 2018/1/5 21:45:56.
+     1>Project "Y:\Projects\VSProjs\VS2015\Laser_sys\VS2015\Laser_server_lib\Laser_server_lib.vcxproj" on node 2 (Rebuild target(s)).
      1>ClCompile:
          Z:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"M_Debug\\" /Fd"M_Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\Source\Server\LayserServer.cpp ..\Source\Server\SerialRead.cpp ..\Source\Server\SocketRead.cpp ..\Source\Server\TestRead.cpp ..\Source\Sys\Tracker.cpp ..\Source\ThirdParty\serial\src\impl\list_ports\list_ports_linux.cc ..\Source\ThirdParty\serial\src\impl\list_ports\list_ports_osx.cc ..\Source\ThirdParty\serial\src\impl\list_ports\list_ports_win.cc ..\Source\ThirdParty\serial\src\impl\unix.cc ..\Source\ThirdParty\serial\src\impl\win.cc ..\Source\ThirdParty\serial\src\serial.cc ..\Source\Util\SimpleThread.cpp Laser_server_debug_main.cpp
          Laser_server_debug_main.cpp
@@ -38,8 +38,8 @@
          LayserServer.cpp
      1>y:\projects\vsprojs\vs2015\laser_sys\vs2015\source\server\serialread.h(16): fatal error C1083: Cannot open include file: 'serial/serial.h': No such file or directory
          Generating Code...
-     1>Done Building Project "Y:\Projects\VSProjs\VS2015\Laser_sys\VS2015\Laser_server_lib\Laser_server_lib.vcxproj" (Build target(s)) -- FAILED.
+     1>Done Building Project "Y:\Projects\VSProjs\VS2015\Laser_sys\VS2015\Laser_server_lib\Laser_server_lib.vcxproj" (Rebuild target(s)) -- FAILED.
 
 Build FAILED.
 
-Time Elapsed 00:00:01.66
+Time Elapsed 00:00:01.67

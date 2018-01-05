@@ -109,10 +109,22 @@ void TestFormView::OnInitialUpdate()
 	mCustomListCtrl.InsertColumn(2, _T("Qx"), LVCFMT_LEFT, QWidth);
 	mCustomListCtrl.InsertColumn(3, _T("Qy"), LVCFMT_LEFT, QWidth);
 	mCustomListCtrl.InsertColumn(4, _T("Qz"), LVCFMT_LEFT, QWidth);
-
+	
 	this->SetTimer(1, 200, NULL);//50hz
 }
 
+#ifdef M_DEBUG;
+#include <io.h>
+#include <fcntl.h>
+void InitConsoleWindow()
+{
+	AllocConsole();
+	HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE);
+	int hCrt = _open_osfhandle((long)handle, _O_TEXT);
+	FILE * hf = _fdopen(hCrt, "w");
+	*stdout = *hf;
+}
+#endif
 
 int TestFormView::OnCreate(LPCREATESTRUCT lpCreateStruct)
 {
@@ -125,7 +137,11 @@ int TestFormView::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	for (int i = 0; i <= MAX_TRACKER_NUM; i++) {
 		listMapGenID[i] = -1;
 	}
-	
+
+#ifdef M_DEBUG;
+	InitConsoleWindow();
+#endif
+
 	server = new LayserServer();
 
 	server->Start();
