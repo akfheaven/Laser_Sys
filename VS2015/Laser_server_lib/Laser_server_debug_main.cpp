@@ -34,7 +34,8 @@ int main()
 	//ip.push_back(Point2d((sqrt(2.0) / 2 - 1) / (5 - sqrt(2.0) / 2), 0));
 	//ip.push_back(Point2d(-0.2, 0.4));
 	//ip.push_back(Point2d((3 * sqrt(2.0) / 2 - 1) / (5 + 3 * sqrt(2.0) / 2), 0));
-	//
+	//ip = Point2d(-0.2, 0);
+	
 	Matx33d camMatrix(
 		1, 0, 0,
 		0, 1, 0,
@@ -56,7 +57,7 @@ int main()
 		_r[0], _r[1], _r[2], _r[3], _r[4], _r[5], _r[6], _r[7], _r[8]);
 
 	printf("trans vec: \n %.3f %.3f %.3f\n", tv[0], tv[1], tv[2]);
-
+	printf("rot vec: \n %.5f %.5f %.5f\n", rv[0], rv[1], rv[2]);
 
 
 

@@ -15,10 +15,16 @@
 #include <mswsock.h>
 
 #include "LayserServer.h"
+#include "opencv2/calib3d/calib3d.hpp"
+
+#include "LayserServer.h"
 #pragma comment(lib, "Ws2_32.lib")
+
+using namespace cv;
 
 //static
 const double LayserServer::IP_TIME_OUT = 1000.0f;//static const double
+const double LASER_CYCLE_TIME = 2000;// us
 
 LayserServer::LayserServer()
 {
@@ -121,7 +127,7 @@ void LayserServer::ReadDataRun()
 	}
 	else if (selectedMode == SERIAL_MODE) {
 		SerialRead* serialRead = new SerialRead();
-		while(!serialRead->Init("COM7", 115200)) {
+		while(!serialRead->Init("COM3", 115200)) {
 			Sleep(1000);
 		}
 		readInterface = serialRead;
@@ -267,6 +273,117 @@ void LayserServer::SendDataRun()
 	WSACleanup();
 }
 
+
+void LayserServer::EPnpCalculate(uint8_t channel, mavlink_sensor_time_t sensorPck)
+{
+#ifdef MDebug
+	printf("%lf timeX1\n", sensorPck.timeX[1]);
+#endif
+	Mat op = (Mat_<Point3d>(1, 5) <<
+		Point3d(0, 0, 0),
+		Point3d(0.04, 0, 0),
+		Point3d(0, 0.04, 0),
+		Point3d(0.04, 0.04, 0),
+		Point3d(0.02, 0.02, 0.0145)
+		);
+	Mat ip;
+	
+	for (int i = 0; i < 5; i++) {
+		float x = tan(3.1415926 * (0.5 - sensorPck.timeX[i] / LASER_CYCLE_TIME * 2));//cot(angle) = tan(pi/2 - angle)
+		float y = tan(3.1415926 * (0.5 - sensorPck.timeY[i] / LASER_CYCLE_TIME * 2));
+		ip.push_back(Point2d(x, y));
+	}
+
+
+	//calculate
+	Matx33d camMatrix(
+		1, 0, 0,
+		0, 1, 0,
+		0, 0, 1.0
+		);
+
+
+	vector<double> tv(3), rv(3);
+	Mat rvec(rv), tvec(tv);
+
+
+	solvePnP(op, ip, camMatrix, noArray(), rvec, tvec, false, CV_EPNP);
+
+	double rot[9] = { 0 };
+	Mat rotM(3, 3, CV_64FC1, rot);
+	Rodrigues(rvec, rotM);
+	double* _r = rotM.ptr<double>();
+
+	// Matrix to Quat 
+	float m11 = _r[0], m12 = _r[1], m13 = _r[2];
+	float m21 = _r[3], m22 = _r[4], m23 = _r[5];
+	float m31 = _r[6], m32 = _r[7], m33 = _r[8];
+
+	float forW = m11 + m22 + m33;
+	float forX = m11 - m22 - m33;
+	float forY = m22 - m11 - m33;
+	float forZ = m33 - m11 - m22;
+	int bigIndex = 0;
+
+	float forBig = forW;
+	if (forX > forBig) {
+		forBig = forX;
+		bigIndex = 1;
+
+	}
+	if (forY > forBig) {
+		forBig = forY;
+		bigIndex = 2;
+
+	}
+	if (forZ > forBig) {
+		forBig = forZ;
+		bigIndex = 3;
+
+	}
+
+	float w = 1, x = 0, y = 0, z = 0;
+
+	float bigValue = sqrt(forBig + 1.0f) * 0.5;
+	float mult = 0.25f / bigValue;
+	switch (bigIndex) {
+	case 0:
+		w = bigValue;
+		x = (m23 - m32) * mult;
+		y = (m31 - m13) * mult;
+		z = (m12 - m21) * mult;
+		break;
+	case 1:
+		x = bigValue;
+		w = (m23 - m32) * mult;
+		y = (m12 + m21) * mult;
+		z = (m31 + m13) * mult;
+		break;
+	case 2:
+		y = bigValue;
+		w = (m31 - m13) * mult;
+		x = (m12 + m21) * mult;
+		z = (m23 + m32) * mult;
+		break;
+	case 3:
+		z = bigValue;
+		w = (m12 - m21) * mult;
+		x = (m31 + m13) * mult;
+		y = (m23 + m32) * mult;
+		break;
+	}
+	
+	//get result 
+	ReadTracker[channel].Px = tv[0];
+	ReadTracker[channel].Py = tv[1];
+	ReadTracker[channel].Pz = tv[2];
+
+	ReadTracker[channel].Qw = w;
+	ReadTracker[channel].Qx = -x;
+	ReadTracker[channel].Qy = -y;
+	ReadTracker[channel].Qz = -z;
+}
+
 //Decode with Mavlink Protocal
 void LayserServer::DecodeMavlink(uint8_t channel, char * data, int len)
 {
@@ -277,15 +394,19 @@ void LayserServer::DecodeMavlink(uint8_t channel, char * data, int len)
 #endif
 			if (DecodeMsg[channel].msgid == MAVLINK_MSG_ID_ATTITUDE_QUATERNION)
 			{
-				memcpy(&pck, DecodeMsg[channel].payload64, MAVLINK_MSG_ID_ATTITUDE_QUATERNION_LEN);
+				memcpy(&quatPck, DecodeMsg[channel].payload64, MAVLINK_MSG_ID_ATTITUDE_QUATERNION_LEN);
 #ifdef MDebug
-				printf("%d | %f | %f | %f\n", pck.time_boot_ms, pck.pitchspeed, pck.rollspeed, pck.yawspeed);
+				printf("%d | %f | %f | %f\n", quatPck.time_boot_ms, quatPck.pitchspeed, quatPck.rollspeed, quatPck.yawspeed);
 #endif
-				ReadTracker[channel].timeStemp = pck.time_boot_ms;
-				ReadTracker[channel].Qw = pck.q1;
-				ReadTracker[channel].Qx = pck.q2;
-				ReadTracker[channel].Qy = pck.q3;
-				ReadTracker[channel].Qz = pck.q4;
+				ReadTracker[channel].timeStemp = quatPck.time_boot_ms;
+				ReadTracker[channel].Qw = quatPck.q1;
+				ReadTracker[channel].Qx = quatPck.q2;
+				ReadTracker[channel].Qy = quatPck.q3;
+				ReadTracker[channel].Qz = quatPck.q4;
+			}
+			else if (DecodeMsg[channel].msgid == MAVLINK_MSG_ID_SENSOR_TIME) {
+				memcpy(&sensorPck, DecodeMsg[channel].payload64, MAVLINK_MSG_ID_SENSOR_TIME_LEN);
+				EPnpCalculate(channel, sensorPck);
 			}
 		}
 	}

@@ -184,7 +184,7 @@ typedef enum {
  */
 #ifndef MAVLINK_COMM_NUM_BUFFERS
 #if (defined linux) | (defined __linux) | (defined  __MACH__) | (defined _WIN32)
-# define MAVLINK_COMM_NUM_BUFFERS 125
+# define MAVLINK_COMM_NUM_BUFFERS 16
 #else
 # define MAVLINK_COMM_NUM_BUFFERS 4
 #endif

@@ -23,19 +23,6 @@
 #include "SimpleThread.h"
 #include "common\mavlink.h"
 using namespace std;
-//mavlink Test
-typedef struct {
-	uint32_t time_boot_ms; /*< Timestamp (milliseconds since system boot)*/
-	float q1; /*< Quaternion component 1, w (1 in null-rotation)*/
-	float q2; /*< Quaternion component 2, x (0 in null-rotation)*/
-	float q3; /*< Quaternion component 3, y (0 in null-rotation)*/
-	float q4; /*< Quaternion component 4, z (0 in null-rotation)*/
-	float rollspeed; /*< Roll angular speed (rad/s)*/
-	float pitchspeed; /*< Pitch angular speed (rad/s)*/
-	float yawspeed; /*< Yaw angular speed (rad/s)*/
-} mMavlink_attitude_quaternion_t;
-
-
 
 class LayserServer {
 protected:
@@ -62,13 +49,14 @@ private:
 	bool ReadContinueFlag;
 	bool SendContinueFlag;
 
-	//Reade
+	//PNP Calculat
+	void EPnpCalculate(uint8_t channel, mavlink_sensor_time_t pck);
+	mavlink_sensor_time_t sensorPck;
+
+	//Read
 	READ_MODE selectedMode = SOCKET_MODE;
 	ReadSensorInterface* readInterface;
-	
-
-	//UDP
-	int portSend = 7777;
+	int portSend = 7777;						//UDP Send
 	static const int MAX_BUFFER = 2048;
 	char decodeBuffer[MAX_BUFFER];
 	CRITICAL_SECTION g_cs;
@@ -78,8 +66,8 @@ private:
 	void DecodeMavlink(uint8_t channel, char* data, int len);
 	mavlink_message_t DecodeMsg[MAX_TRACKER_NUM + 5];
 	mavlink_status_t status;
-	mMavlink_attitude_quaternion_t pck;
-
+	mavlink_attitude_quaternion_t quatPck;
+	
 
 	//Tacker 
 	vector<Tracker*> *Trackers;
